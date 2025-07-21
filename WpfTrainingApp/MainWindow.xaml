@@ -5,8 +5,30 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfTrainingApp"
         mc:Ignorable="d"
+        WindowStyle="None"
+        Background="Transparent"
         Title="MainWindow" Height="450" Width="800">
+    <WindowChrome.WindowChrome>
+        <WindowChrome CaptionHeight="30" CornerRadius="10" GlassFrameThickness="0" />
+    </WindowChrome.WindowChrome>
     <Grid>
-        
+        <Border Background="DarkSlateBlue" Height="30" MouseDown="DragWindow" VerticalAlignment="Top">
+            <TextBlock Text="My App" Foreground="White" VerticalAlignment="Center" Margin="10,0,665,2"/>
+        </Border>
+        <Canvas HorizontalAlignment="Right" VerticalAlignment="Top" Height="30" Width="145" Margin="0,0,10,0" >
+            <Button Width="20" Height="20" Opacity="0" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="115" Canvas.Top="4">
+                
+            </Button>
+
+        </Canvas>
+
+        <!-- Your content below -->
+        <Grid Background="White" Margin="0,30,0,0">
+
+        </Grid>
     </Grid>
+
+
+
+
 </Window>
