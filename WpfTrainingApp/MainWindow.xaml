@@ -13,17 +13,18 @@
     </WindowChrome.WindowChrome>
     <Grid>
         <Border Background="DarkSlateBlue" Height="30" MouseDown="DragWindow" VerticalAlignment="Top">
-            <TextBlock Text="My App" Foreground="White" VerticalAlignment="Center" Margin="10,0,665,2"/>
+            <Canvas>
+                <Button Opacity="0" OpacityMask="White" Width="16" Height="16" HorizontalAlignment="Center" Canvas.Left="777" VerticalAlignment="Top" Canvas.Top="5">
+                    <Image Stretch="Uniform" Source="/Resource/Images/white_close_button.jpg" Width="14" Height="14" />
+                </Button>
+            </Canvas>
         </Border>
-        <Canvas HorizontalAlignment="Right" VerticalAlignment="Top" Height="30" Width="145" Margin="0,0,10,0" >
-            <Button Width="20" Height="20" Opacity="0" VerticalAlignment="Top" HorizontalAlignment="Center" Canvas.Left="115" Canvas.Top="4">
-                
-            </Button>
 
-        </Canvas>
 
         <!-- Your content below -->
         <Grid Background="White" Margin="0,30,0,0">
+
+            <Menu x:Name="menu" Height="25" VerticalAlignment="Top"/>
 
         </Grid>
     </Grid>
