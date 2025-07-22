@@ -100,9 +100,7 @@
     <Folder Include="Mvvm\View\" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Resource\Images\white_close_button.jpg">
-      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
-    </Content>
+    <Resource Include="Resource\Images\white_close_button.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

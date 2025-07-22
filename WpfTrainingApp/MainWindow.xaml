@@ -12,13 +12,15 @@
         <WindowChrome CaptionHeight="30" CornerRadius="10" GlassFrameThickness="0" />
     </WindowChrome.WindowChrome>
     <Grid>
-        <Border Background="DarkSlateBlue" Height="30" MouseDown="DragWindow" VerticalAlignment="Top">
-            <Canvas>
-                <Button Opacity="0" OpacityMask="White" Width="16" Height="16" HorizontalAlignment="Center" Canvas.Left="777" VerticalAlignment="Top" Canvas.Top="5">
-                    <Image Stretch="Uniform" Source="/Resource/Images/white_close_button.jpg" Width="14" Height="14" />
-                </Button>
-            </Canvas>
-        </Border>
+
+        <Grid Height="30" VerticalAlignment="Top" Background="DarkSlateBlue" MouseDown="DragWindow">
+            <Button Width="20" Height="20" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0"
+                  Background="Transparent" BorderBrush="Transparent" >
+                <Image Width="18" Height="18" Stretch="Uniform" Source="/Resource/Images/white_close_button.png"/>
+            </Button>
+
+        </Grid>
+
 
 
         <!-- Your content below -->
