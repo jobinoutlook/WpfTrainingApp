@@ -31,6 +31,30 @@ namespace WpfTrainingApp
                 this.DragMove();
         }
 
+        private void Close_Click(object sender, RoutedEventArgs e)
+        {
+            this.Close();
+        }
 
+        private void Maximize_Click(object sender, RoutedEventArgs e)
+        {
+            if (this.WindowState != WindowState.Maximized)
+            {
+                this.WindowState = WindowState.Maximized;
+            }
+            else
+            {
+                this.WindowState = WindowState.Normal;
+                //this.Width = 800;
+                //this.Height = 600;
+
+
+            }
+        }
+
+        private void Minimize_Click(object sender, RoutedEventArgs e)
+        {
+            this.WindowState = WindowState.Minimized;
+        }
     }
 }

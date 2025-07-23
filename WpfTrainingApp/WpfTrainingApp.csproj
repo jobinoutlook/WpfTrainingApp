@@ -34,6 +34,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>diamond.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -100,7 +103,19 @@
     <Folder Include="Mvvm\View\" />
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Resource\Images\white_close_button.png" />
+    <Resource Include="Resource\Images\minimize_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\close_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\maximize_button.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Resource\Images\diamond.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="diamond.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
