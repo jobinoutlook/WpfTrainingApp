@@ -9,8 +9,8 @@ namespace WpfCoreApp.Mvvm.Model
 {
     internal class Preference
     {
-        [DisplayName]
+        
         public bool ShowInSystemTray {  get; set; }
-        public bool ShowInTaskBar {  get; set; }
+        public bool ShowInTaskBar {  get; set; } = true;
     }
 }
