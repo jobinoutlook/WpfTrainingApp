@@ -24,7 +24,7 @@
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,8,0">
                 <Button  Click="Minimize_Click"
-                         Margin="0,0,5,0"
+                         Margin="0,0,10,0"
                         Width="18" Height="18"
                         Background="Transparent"
                         BorderBrush="Transparent"
@@ -32,7 +32,7 @@
                     <Image Width="15" Height="15" Source="/Resource/Images/minimize_button.png"/>
                 </Button>
                 <Button  Click="Maximize_Click"
-                          Margin="0,0,5,0"
+                          Margin="0,0,10,0"
                         Width="18" Height="18"
                         Background="Transparent"
                         BorderBrush="Transparent"

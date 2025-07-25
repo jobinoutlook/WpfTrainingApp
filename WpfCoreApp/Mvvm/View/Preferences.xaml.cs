@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfCoreApp.Mvvm.ViewModel;
 
 namespace WpfCoreApp.Mvvm.View
 {
@@ -22,6 +23,8 @@ namespace WpfCoreApp.Mvvm.View
         public Preferences()
         {
             InitializeComponent();
+
+            this.DataContext = new PreferencesViewModel();
         }
     }
 }
