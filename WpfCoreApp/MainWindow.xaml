@@ -7,19 +7,22 @@
         mc:Ignorable="d"
         WindowStyle="None"
         Background="Transparent"
+        AllowsTransparency="False"
         ResizeMode="CanResize"
         Title="MainWindow" Height="450" Width="800">
+   
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="30" CornerRadius="10" GlassFrameThickness="0" ResizeBorderThickness="5"
                       UseAeroCaptionButtons="False"/>
 
     </WindowChrome.WindowChrome>
-    <Grid>
+    <Border Style="{StaticResource ShadowContainerStyle}">
+        <Grid>
 
         <Grid Height="30" VerticalAlignment="Top" Background="DarkSlateBlue" MouseDown="DragWindow">
            
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Left">
-                <Image Source="/Resource/Images/diamond.png" Height="20" Width="20"  Margin="5,0,0,0"/>
+                <Image  Source="/Resource/Images/diamond.png" Height="20" Width="20"  Margin="5,0,0,0"/>
                 <Label Content="My App" Foreground="White" Margin="5,0,0,0" />
             </StackPanel>
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Right" Margin="0,0,8,0">
@@ -29,7 +32,7 @@
                         Background="Transparent"
                         BorderBrush="Transparent"
                         WindowChrome.IsHitTestVisibleInChrome="True">
-                    <Image Width="15" Height="15" Source="/Resource/Images/minimize_button.png"/>
+                    <Image  Width="15" Height="15" Source="/Resource/Images/minimize_button.png"/>
                 </Button>
                 <Button  Click="Maximize_Click"
                           Margin="0,0,10,0"
@@ -37,7 +40,7 @@
                         Background="Transparent"
                         BorderBrush="Transparent"
                         WindowChrome.IsHitTestVisibleInChrome="True">
-                    <Image Width="15" Height="15" Source="/Resource/Images/maximize_button.png"/>
+                        <Image x:Name="imgMaxMin" Width="15" Height="15" Source="/Resource/Images/maximize_button.png"/>
                 </Button>
                 <Button  Click="Close_Click"
                         Width="18" Height="18"
@@ -66,6 +69,9 @@
                 <MenuItem Header="Edit">
                     <MenuItem x:Name="Preferences" Header="Preferences" Click="Preferences_Click"/>
                 </MenuItem>
+                <MenuItem Header="Demo">
+                    <MenuItem x:Name="Cube3D" Header="3D Cube" Click="Cube3D_Click"/>
+                </MenuItem>
             </Menu>
 
         </Grid>
@@ -73,5 +79,5 @@
 
 
 
-
+    </Border>
 </Window>

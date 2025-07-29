@@ -1,17 +1,21 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Runtime.InteropServices;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Automation;
 using System.Windows.Controls;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
+using System.Windows.Interop;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using WpfCoreApp.Mvvm.View;
 
 namespace WpfCoreApp
 {
@@ -20,10 +24,35 @@ namespace WpfCoreApp
     /// </summary>
     public partial class MainWindow : Window
     {
+        ImageSource imgSrcMaxMin=null;
+        ImageSource imgSrcMaxmize = null;
         public MainWindow()
         {
             InitializeComponent();
+            imgSrcMaxMin = new BitmapImage(new Uri("/Resource/Images/maxmin_button.png", UriKind.Relative));
+            imgSrcMaxmize = new BitmapImage(new Uri("/Resource/Images/maximize_button.png", UriKind.Relative));
         }
+
+
+        //-----------------------------------------------------
+        /// <summary>
+        /// To enable/disable window shadow, comment/uncomment lines below
+        /// </summary>
+
+        protected override void OnSourceInitialized(EventArgs e)
+        {
+            base.OnSourceInitialized(e);
+            var hwnd = new WindowInteropHelper(this).Handle;
+            var margins = new Margins { Left = -1, Right = -1, Top = -1, Bottom = -1 };
+            DwmExtendFrameIntoClientArea(hwnd, ref margins);
+        }
+
+        [DllImport("dwmapi.dll")]
+        private static extern int DwmExtendFrameIntoClientArea(IntPtr hwnd, ref Margins margins);
+
+        private struct Margins { public int Left, Right, Top, Bottom; }
+
+        //-------------------------------------------------------
 
         private void DragWindow(object sender, MouseButtonEventArgs e)
         {
@@ -41,10 +70,13 @@ namespace WpfCoreApp
             if (this.WindowState != WindowState.Maximized)
             {
                 this.WindowState = WindowState.Maximized;
+
+                this.imgMaxMin.Source=imgSrcMaxMin;
             }
             else
             {
                 this.WindowState = WindowState.Normal;
+                this.imgMaxMin.Source=imgSrcMaxmize;
                 //this.Width = 800;
                 //this.Height = 600;
 
@@ -59,7 +91,14 @@ namespace WpfCoreApp
 
         private void Preferences_Click(object sender, RoutedEventArgs e)
         {
+            Preferences winPreferences = new();
+            winPreferences.Show();
+        }
 
+        private void Cube3D_Click(object sender, RoutedEventArgs e)
+        {
+            Cube3DRotating cube3D = new();
+            cube3D.ShowDialog();
         }
     }
 }

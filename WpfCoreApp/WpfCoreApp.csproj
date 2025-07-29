@@ -10,10 +10,18 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <Compile Remove="Resource\Images\tmp\**" />
+    <EmbeddedResource Remove="Resource\Images\tmp\**" />
+    <None Remove="Resource\Images\tmp\**" />
+    <Page Remove="Resource\Images\tmp\**" />
+  </ItemGroup>
+
+  <ItemGroup>
     <None Remove="appsettings.json" />
     <None Remove="Resource\Images\close_button.png" />
     <None Remove="Resource\Images\diamond.png" />
     <None Remove="Resource\Images\maximize_button.png" />
+    <None Remove="Resource\Images\maxmin_button.png" />
     <None Remove="Resource\Images\minimize_button.png" />
   </ItemGroup>
 
@@ -24,11 +32,16 @@
     <Content Include="Resource\Images\close_button.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
-    <Content Include="Resource\Images\diamond.ico" />
+    <Content Include="Resource\Images\diamond.ico">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
     <Content Include="Resource\Images\diamond.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resource\Images\maximize_button.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Resource\Images\maxmin_button.png">
       <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
     </Content>
     <Content Include="Resource\Images\minimize_button.png">
