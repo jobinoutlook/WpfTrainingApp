@@ -3,8 +3,6 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.14.36310.24
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTrainingApp", "WpfTrainingApp\WpfTrainingApp.csproj", "{91C2C652-1825-49F6-959D-58888BA7C2B5}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfCoreApp", "WpfCoreApp\WpfCoreApp.csproj", "{8276DFDC-7AD6-475E-B571-BC770580F5A2}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TheWeatherApp", "TheWeatherApp\TheWeatherApp.csproj", "{BB374D91-DC51-45F8-8296-68137F052D21}"
@@ -15,10 +13,6 @@ Global
 		Release|Any CPU = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{91C2C652-1825-49F6-959D-58888BA7C2B5}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{91C2C652-1825-49F6-959D-58888BA7C2B5}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{91C2C652-1825-49F6-959D-58888BA7C2B5}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{91C2C652-1825-49F6-959D-58888BA7C2B5}.Release|Any CPU.Build.0 = Release|Any CPU
 		{8276DFDC-7AD6-475E-B571-BC770580F5A2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{8276DFDC-7AD6-475E-B571-BC770580F5A2}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{8276DFDC-7AD6-475E-B571-BC770580F5A2}.Release|Any CPU.ActiveCfg = Release|Any CPU

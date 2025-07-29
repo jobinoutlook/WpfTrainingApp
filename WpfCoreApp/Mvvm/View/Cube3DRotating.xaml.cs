@@ -12,14 +12,14 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 
-namespace WpfTrainingApp.Mvvm.View
+namespace WpfCoreApp.Mvvm.View
 {
     /// <summary>
-    /// Interaction logic for Preferences.xaml
+    /// Interaction logic for Cube3DRotating.xaml
     /// </summary>
-    public partial class Preferences : Window
+    public partial class Cube3DRotating : Window
     {
-        public Preferences()
+        public Cube3DRotating()
         {
             InitializeComponent();
         }
