@@ -71,12 +71,12 @@ namespace WpfCoreApp
             {
                 this.WindowState = WindowState.Maximized;
 
-                this.imgMaxMin.Source=imgSrcMaxMin;
+                this.imgMaxMin.Source = imgSrcMaxMin;
             }
             else
             {
                 this.WindowState = WindowState.Normal;
-                this.imgMaxMin.Source=imgSrcMaxmize;
+                this.imgMaxMin.Source = imgSrcMaxmize;
                 //this.Width = 800;
                 //this.Height = 600;
 
@@ -92,12 +92,16 @@ namespace WpfCoreApp
         private void Preferences_Click(object sender, RoutedEventArgs e)
         {
             Preferences winPreferences = new();
+            winPreferences.Owner = this;
+            winPreferences.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             winPreferences.Show();
         }
 
         private void Cube3D_Click(object sender, RoutedEventArgs e)
         {
             Cube3DRotating cube3D = new();
+            cube3D.Owner = this;    
+            cube3D.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             cube3D.ShowDialog();
         }
     }
