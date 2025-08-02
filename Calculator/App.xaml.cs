@@ -2,7 +2,7 @@
 using System.Data;
 using System.Windows;
 
-namespace TheWeatherApp
+namespace Calculator
 {
     /// <summary>
     /// Interaction logic for App.xaml

@@ -70,7 +70,7 @@
                     <MenuItem x:Name="Preferences" Header="Preferences" Click="Preferences_Click"/>
                 </MenuItem>
                 <MenuItem Header="Demo">
-                    <MenuItem x:Name="Cube3D" Header="3D Cube" Click="Cube3D_Click"/>
+                    <MenuItem x:Name="Cube3D" Header="Cube animation" Click="Cube3D_Click"/>
                 </MenuItem>
             </Menu>
 

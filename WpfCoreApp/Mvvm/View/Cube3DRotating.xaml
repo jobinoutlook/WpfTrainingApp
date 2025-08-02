@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCoreApp.Mvvm.View"
         mc:Ignorable="d"
-        Title="Cube3DRotating" Height="385" Width="610">
+        Title="Cube Rotating" Height="385" Width="610">
     <Grid>
         <Viewport3D>
             <!-- Camera -->
