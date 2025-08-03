@@ -1,0 +1,11 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml" 
+                    xmlns:sys="clr-namespace:System;assembly=mscorlib"
+                    xmlns:System="http://schemas.microsoft.com/netfx/2009/xaml/presentation">
+    
+
+
+    <System:Thickness x:Key="Margin.Default">5,5,5,5</System:Thickness>
+    <sys:Double x:Key="FontSize.Default">25</sys:Double>
+
+</ResourceDictionary>

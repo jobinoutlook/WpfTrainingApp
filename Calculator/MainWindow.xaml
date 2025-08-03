@@ -23,6 +23,7 @@
             <RowDefinition Height="*"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
+        
         <Label Content="0" x:Name="lblResult"
                HorizontalAlignment="Right"
                VerticalAlignment="Bottom"
@@ -30,79 +31,79 @@
                Grid.ColumnSpan="4"
                />
         <Button Content="AC" x:Name="btnAC"
-                Margin="5"
+                Style="{StaticResource StyleFunctionButton}"
                 Grid.Row="1"
                 Grid.Column="0"/>
         <Button Content="+/-" x:Name="btnNegativePositive"
-                Margin="5"
+                Style="{StaticResource StyleFunctionButton}"
                 Grid.Row="1"
                 Grid.Column="1"/>
         <Button Content="%" x:Name="btnPercentage"
-                Margin="5"
+                Style="{StaticResource StyleFunctionButton}"
                 Grid.Row="1"
                 Grid.Column="2"/>
         <Button Content="/" x:Name="btnDivision"
-                Margin="5"
+                Style="{StaticResource StyleOperatorButton}"
                 Grid.Row="1"
                 Grid.Column="3"/>
         <Button Content="7" x:Name="btnSeven"
-                Margin="5"
+                Style="{StaticResource StyleNumberButton}"
                 Grid.Row="2"
                 Grid.Column="0"/>
         <Button Content="8" x:Name="btnEight" 
-                Margin="5"
+                Style="{StaticResource StyleNumberButton}"
                 Grid.Row="2"
                 Grid.Column="1"/>
         <Button Content="9"  x:Name="btnNine"
-                Margin="5"
+                Style="{StaticResource StyleNumberButton}"
                 Grid.Row="2"
                 Grid.Column="2"/>
         <Button Content="*" x:Name="btnStar"
-                Margin="5"
+                Style="{StaticResource StyleOperatorButton}"
                 Grid.Row="2"
                 Grid.Column="3"/>
         <Button Content="4" x:Name="btnFour" 
-                Margin="5"
+                Style="{StaticResource StyleNumberButton}"
                 Grid.Row="3"
                 Grid.Column="0"/>
         <Button Content="5" x:Name="btnFive" 
-                Margin="5"
+                Style="{StaticResource StyleNumberButton}"
                 Grid.Row="3"
                 Grid.Column="1"/>
         <Button Content="6" x:Name="btnSix" 
-                Margin="5"
+                Style="{StaticResource StyleNumberButton}"
                 Grid.Row="3"
                 Grid.Column="2"/>
         <Button Content="-" x:Name="btnMinus" 
-                Margin="5"
+                Style="{StaticResource StyleOperatorButton}"
                 Grid.Row="3"
                 Grid.Column="3"/>
         <Button Content="1" x:Name="btnOne" 
-                Margin="5"
+                Style="{StaticResource StyleNumberButton}"
                 Grid.Row="4"
                 Grid.Column="0"/>
         <Button Content="2" x:Name="btnTwo" 
-                Margin="5"
+               Style="{StaticResource StyleNumberButton}"
                 Grid.Row="4"
                 Grid.Column="1"/>
         <Button Content="3" x:Name="btnThree" 
-                Margin="5"
+                Style="{StaticResource StyleNumberButton}"
                 Grid.Row="4"
                 Grid.Column="2"/>
         <Button Content="+" x:Name="btnPlus" 
-                Margin="5"
+                Style="{StaticResource StyleOperatorButton}"
                 Grid.Row="4"
                 Grid.Column="3"/>
         <Button Content="0" x:Name="btnZero" 
-                Margin="5"
+                Style="{StaticResource StyleNumberButton}"
                 Grid.Row="5"
                 Grid.ColumnSpan="2"/>
         <Button Content="." x:Name="btnPoint" 
-                Margin="5"
+                Style="{StaticResource StyleNumberButton}"
                 Grid.Row="5"
                 Grid.Column="2"/>
         <Button Content="=" x:Name="btnEquals" 
-                Margin="5"
+                Style="{StaticResource StyleOperatorButton}"
                 Grid.Row="5"
                 Grid.Column="3"/>
 

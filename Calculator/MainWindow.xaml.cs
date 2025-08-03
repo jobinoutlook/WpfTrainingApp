@@ -157,8 +157,16 @@ namespace Calculator
                         result = lastNumber * currentNumber;
                         break;
                     case '/':
-                        if (currentNumber != 0)
+                        if (currentNumber == 0)
+                        {
+                            //MessageBox.Show(this,"Division by zero not supported", "Error", MessageBoxButton.OK, MessageBoxImage.Error,MessageBoxResult.None,MessageBoxOptions.None);
+                            CenteredMessageBox.Show(this, "Division by 0 not supported.", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+
+                        }
+                        else
+                        {
                             result = lastNumber / currentNumber;
+                        }
                         break;
                     case '%':
                             result = ((lastNumber / 100) * currentNumber);
