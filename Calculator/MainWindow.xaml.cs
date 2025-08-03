@@ -89,10 +89,21 @@ namespace Calculator
             }
             else if (sender == btnNegativePositive)
             {
-                if (double.TryParse(lblResult.Content.ToString(), out lastNumber))
+                if (Operator == 'O')
                 {
-                    if (lastNumber != 0)
-                        lblResult.Content = (lastNumber * -1).ToString();
+                    if (double.TryParse(lblResult.Content.ToString(), out lastNumber))
+                    {
+                        if (lastNumber != 0)
+                            lblResult.Content = (lastNumber * -1).ToString();
+                    }
+                }
+                else
+                {
+                    double currentNumber = 0;
+                    if (double.TryParse(lblResult.Content.ToString(), out currentNumber))
+                    {
+                        lblResult.Content = (currentNumber * -1).ToString();
+                    }
                 }
             }
         }
