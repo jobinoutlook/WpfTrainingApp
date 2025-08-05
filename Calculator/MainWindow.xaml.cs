@@ -180,7 +180,7 @@ namespace Calculator
                         }
                         break;
                     case '%':
-                            result = ((lastNumber / 100) * currentNumber);
+                            result = (( currentNumber / 100) * lastNumber);
                         break;
 
                 }
