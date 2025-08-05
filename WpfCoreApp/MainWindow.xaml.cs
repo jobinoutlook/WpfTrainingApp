@@ -63,6 +63,7 @@ namespace WpfCoreApp
         private void Close_Click(object sender, RoutedEventArgs e)
         {
             this.Close();
+
         }
 
         private void Maximize_Click(object sender, RoutedEventArgs e)
@@ -103,6 +104,19 @@ namespace WpfCoreApp
             cube3D.Owner = this;    
             cube3D.WindowStartupLocation = WindowStartupLocation.CenterOwner;
             cube3D.ShowDialog();
+        }
+
+        private void Window_Closing(object sender, System.ComponentModel.CancelEventArgs e)
+        {
+
+
+            var result = CenteredMessageBox.Show(this, "Are you sure you want to exit?", "Exit Confirmation", MessageBoxButton.YesNo, MessageBoxImage.Question);
+
+            if (result != MessageBoxResult.Yes)
+            {
+                e.Cancel = true; // Cancel the close
+            }
+
         }
     }
 }
