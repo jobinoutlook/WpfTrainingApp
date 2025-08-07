@@ -4,28 +4,30 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:DesktopContactsApp"
+        xmlns:uc="clr-namespace:DesktopContactsApp.Controls"
         mc:Ignorable="d"
         Title="MainWindow" Height="400" Width="525">
     <Grid>
 
-        <StackPanel Height="Auto" VerticalAlignment="Top" Margin="10">
+        <StackPanel Height="59" VerticalAlignment="Top" Margin="10,10,10,0">
             <Button Content="New Contact" Click="Button_Click"/>
             <TextBox x:Name="txtSearch" Margin="0,10,0,10" TextChanged="txtSearch_TextChanged"/>
+
         </StackPanel>
 
 
-        <ListView x:Name="lstviewContacts" Margin="10,0,10,40"
+        <ListView x:Name="lstviewContacts" Margin="10,94,10,0" SelectionChanged="lstviewContacts_SelectionChanged"
                   ScrollViewer.VerticalScrollBarVisibility="Visible"
-                  ScrollViewer.CanContentScroll="False" Height="240" VerticalAlignment="Bottom">
-
+                  ScrollViewer.CanContentScroll="False" Height="273" VerticalAlignment="Top">
+            <ListView.ItemContainerStyle>
+                <Style TargetType="ListViewItem">
+                    <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
+                </Style>
+            </ListView.ItemContainerStyle>
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <StackPanel>
-                        <TextBlock Text="{Binding Name}" FontSize="20" FontWeight="Bold"/>
-                        <TextBlock Text="{Binding Email}" FontSize="15" Foreground="DodgerBlue"/>
-                        <TextBlock Text="{Binding Phone}" FontSize="15" FontStyle="Italic"/>
-                    </StackPanel>
+                    <uc:ContactControl Contact="{Binding}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

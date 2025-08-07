@@ -22,6 +22,7 @@ namespace DesktopContactsApp
         public MainWindow()
         {
             InitializeComponent();
+
             
             ReadDatabase();
         }
@@ -46,7 +47,7 @@ namespace DesktopContactsApp
 
             if (lstContact != null)
             {
-                                
+
                 lstviewContacts.ItemsSource = lstContact;
                 //dataGrid.ItemsSource = lstContact;
 
@@ -58,6 +59,20 @@ namespace DesktopContactsApp
         {
             var lstFiltered = lstContact.Where(l => l.Name.ToLower().Contains(txtSearch.Text.ToLower())).ToList();
             lstviewContacts.ItemsSource = lstFiltered;
+        }
+
+        
+        private void lstviewContacts_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            Contact contact = (Contact)lstviewContacts.SelectedItem;
+
+            if (contact != null)
+            {
+                DetailsContactWindow detailsContactWindow = new DetailsContactWindow(contact);
+                detailsContactWindow.ShowDialog();
+
+                ReadDatabase();
+            }
         }
     }
 }
