@@ -1,11 +1,11 @@
-﻿using Newtonsoft.Json;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 using WeatherApp.Model;
+using Newtonsoft.Json;
 
 namespace WeatherApp.ViewModel.Helpers
 {
@@ -16,13 +16,13 @@ namespace WeatherApp.ViewModel.Helpers
         public const string CURRENT_CONDITIONS_ENDPOINT = "currentconditions/v1/{0}?apikey={1}";
         public const string API_KEY = "zAF58ZlVydwP9FTbq72zGtiQHwIQDBBo";
 
-        public static async Task<List<City>> GetCities(string query)
+        public static async Task<List<City>?> GetCities(string query)
         {
-            List<City> cities = new List<City>();
+            List<City>? cities = new();
 
             string url = BASE_URL + string.Format(AUTOCOMPLETE_ENDPOINT, API_KEY, query);
 
-            using (HttpClient client = new HttpClient())
+            using (HttpClient client = new())
             {
                 var response = await client.GetAsync(url);
                 string json = await response.Content.ReadAsStringAsync();
@@ -36,19 +36,28 @@ namespace WeatherApp.ViewModel.Helpers
         public static async Task<CurrentConditions?> GetCurrentConditions(string cityKey)
         {
             CurrentConditions? currrentConditions = new();
-
-            string url = BASE_URL + string.Format(CURRENT_CONDITIONS_ENDPOINT, cityKey, API_KEY);
-
-            using (HttpClient client = new HttpClient())
+            try
             {
-                var response = await client.GetAsync(url);
-                string json = await response.Content.ReadAsStringAsync();
+                //CurrentConditions? currrentConditions = new();
 
-                var conditionsList = JsonConvert.DeserializeObject<List<CurrentConditions>>(json);
-                currrentConditions = conditionsList != null ? conditionsList.FirstOrDefault() : null;
+                string url = BASE_URL + string.Format(CURRENT_CONDITIONS_ENDPOINT, cityKey, API_KEY);
+
+                using (HttpClient client = new())
+                {
+                    var response = await client.GetAsync(url);
+                    string json = await response.Content.ReadAsStringAsync();
+
+                    var conditionsList = JsonConvert.DeserializeObject<List<CurrentConditions>>(json);
+                    currrentConditions = conditionsList != null ? conditionsList.FirstOrDefault() : null;
+                }
+
+                return currrentConditions;
             }
-
-            return currrentConditions;
+            catch(Exception) 
+            {
+                return currrentConditions;
+            }
+            
         }
     }
 }
