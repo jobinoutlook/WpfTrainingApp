@@ -1,0 +1,73 @@
+﻿<Window x:Class="WeatherApp.View.WeatherWindow2"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WeatherApp.View"
+        xmlns:vm="clr-namespace:WeatherApp.ViewModel"
+        xmlns:converters="clr-namespace:WeatherApp.ViewModel.ValueConverters"
+        mc:Ignorable="d"
+        Title="Weather Window2" Height="600" Width="400">
+    <Window.Resources>
+        <vm:WeatherVM2 x:Key="vm2"/>
+        <converters:BoolToRainConverter x:Key="boolToRain"/>
+    </Window.Resources>
+    <Grid DataContext="{StaticResource vm2}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="*"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <Grid Grid.Row="0">
+            <StackPanel Margin="20">
+                <TextBlock Text="Search for a city"/>
+                <TextBox Text="{Binding Query, Mode=TwoWay,UpdateSourceTrigger=PropertyChanged}"/>
+                <Button Command="{Binding SearchCommand2}"
+                        CommandParameter="{Binding Query}"
+                        Margin="0,10"
+                        Content="Search"/>
+                <ListView ItemsSource="{Binding Cities}"
+                          SelectedValue="{Binding SelectedCity}">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding LocalizedName}"/>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </StackPanel>
+        </Grid>
+        <Grid Grid.Row="1" Background="#4392f1"
+              DataContext="{Binding CurrentConditions}"
+              >
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="Auto"/>
+            </Grid.ColumnDefinitions>
+            <StackPanel Grid.Column="0" Margin="0,10">
+                <TextBlock
+                    DataContext="{StaticResource vm2}"
+                    Text="{Binding SelectedCity.LocalizedName}"
+                    Foreground="#f4f4f8"
+                    FontSize="20"
+                    Margin="20,0"/>
+                <TextBlock
+                    Text="{Binding WeatherText}"
+                    Foreground="#f4f4f8"
+                    FontSize="20"
+                    Margin="20,0"/>
+                <TextBlock
+                    Text="{Binding HasPrecipitation, Converter={StaticResource boolToRain}}"
+                    Foreground="#f4f4f8"
+                    FontSize="16"
+                    Margin="20,0"/>
+                
+            </StackPanel>
+            <TextBlock 
+                    Text="{Binding Temperature.Metric.Value, StringFormat={}{0}°C}"
+                    Grid.Column="1"
+                    Foreground="#f4f4f8"
+                    FontSize="30"
+                    Margin="20,0"/>
+
+        </Grid>
+    </Grid>
+</Window>
