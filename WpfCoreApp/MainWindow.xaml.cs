@@ -118,5 +118,15 @@ namespace WpfCoreApp
             }
 
         }
+
+       
+
+        private void Window_ContentRendered(object sender, EventArgs e)
+        {
+            LoginWindow loginWindow = new LoginWindow();
+            loginWindow.Owner = this;
+            loginWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            loginWindow.ShowDialog();
+        }
     }
 }
