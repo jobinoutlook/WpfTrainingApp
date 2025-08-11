@@ -31,5 +31,6 @@ namespace WpfCoreApp.EF
 
         //DbSets
         public DbSet<Preference> Preferences { get; set; }
+        public DbSet<Contact> Contacts { get; set; }
     }
 }
