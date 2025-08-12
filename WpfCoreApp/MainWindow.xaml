@@ -71,8 +71,10 @@
                     <MenuItem Header="Edit">
                         <MenuItem x:Name="Preferences" Header="Preferences" Click="Preferences_Click"/>
                     </MenuItem>
+                    
                     <MenuItem Header="Demo">
                         <MenuItem x:Name="Cube3D" Header="Cube animation" Click="Cube3D_Click"/>
+                        <MenuItem x:Name="Contacts" Header="Contacts" Click="Contacts_Click"/>
                     </MenuItem>
 
                 </Menu>
