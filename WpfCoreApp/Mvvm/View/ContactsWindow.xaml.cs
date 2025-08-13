@@ -11,6 +11,8 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfCoreApp.Mvvm.Model;
+using WpfCoreApp.Mvvm.ViewModel;
 
 namespace WpfCoreApp.Mvvm.View
 {
@@ -22,6 +24,33 @@ namespace WpfCoreApp.Mvvm.View
         public ContactsWindow()
         {
             InitializeComponent();
+            this.DataContext = new ContactsVM();
         }
+
+        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            ShowDetails();
+        }
+
+        private void ShowDetails()
+        {
+            Contact contact = (Contact)listView.SelectedItem;
+
+            if (contact != null)
+            {
+                
+                ContactDetailsWindow contactDetailsWindow = new ContactDetailsWindow();
+                contactDetailsWindow.Owner = this;
+                contactDetailsWindow.DataContext = this.DataContext;
+                contactDetailsWindow.ShowDialog();
+
+
+            }
+        }
+
+        
+
+       
     }
+    
 }

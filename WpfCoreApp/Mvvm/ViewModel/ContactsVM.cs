@@ -27,6 +27,10 @@ namespace WpfCoreApp.Mvvm.ViewModel
 
         }
 
+        public Contact SelectedContact { get; set; }
+
+
+
         private ObservableCollection<Contact> contacts;
 
         public ObservableCollection<Contact> Contacts

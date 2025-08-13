@@ -7,14 +7,16 @@
         xmlns:vm="clr-namespace:WpfCoreApp.Mvvm.ViewModel"
         mc:Ignorable="d"
         Title="Contacts Window (MVVM)" Height="525" Width="450">
-    <Window.Resources>
+    <!--<Window.Resources>
         <vm:ContactsVM x:Key="vm" />
-    </Window.Resources>
-    <Grid DataContext="{StaticResource vm}">
+    </Window.Resources>-->
+    <Grid>
+        <!--DataContext="{StaticResource vm}">-->
         <GroupBox x:Name="groupBox" Header="Search" Margin="20,0,20,0" Height="54" VerticalAlignment="Top">
             <TextBox x:Name="txtSearch"/>
         </GroupBox>
-        <ListView x:Name="listView" ItemsSource="{Binding Contacts}" 
+        <ListView x:Name="listView" ItemsSource="{Binding Contacts}" SelectedItem="{Binding SelectedContact,Mode=TwoWay}"
+                  SelectionChanged="listView_SelectionChanged"
                   Margin="30,89,30,30" ScrollViewer.VerticalScrollBarVisibility="Visible">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
