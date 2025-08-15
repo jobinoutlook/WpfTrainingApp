@@ -5,6 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:WpfCoreApp.Mvvm.View"
         xmlns:vm="clr-namespace:WpfCoreApp.Mvvm.ViewModel"
+        xmlns:uc="clr-namespace:WpfCoreApp.Controls"
         mc:Ignorable="d"
         Title="Contacts Window (MVVM)" Height="525" Width="450">
     <!--<Window.Resources>
@@ -15,9 +16,9 @@
         <GroupBox x:Name="groupBox" Header="Search" Margin="20,0,20,0" Height="54" VerticalAlignment="Top">
             <TextBox x:Name="txtSearch"/>
         </GroupBox>
-        <ListView x:Name="listView" ItemsSource="{Binding Contacts}" SelectedItem="{Binding SelectedContact,Mode=TwoWay}"
-                  SelectionChanged="listView_SelectionChanged"
-                  Margin="30,89,30,30" ScrollViewer.VerticalScrollBarVisibility="Visible">
+        <ListView x:Name="lstviewContacts"  SelectionChanged="lstviewContacts_SelectionChanged"
+          ScrollViewer.VerticalScrollBarVisibility="Visible"
+          ScrollViewer.CanContentScroll="False" Height="380" VerticalAlignment="Top" Margin="20,69,20,0">
             <ListView.ItemContainerStyle>
                 <Style TargetType="ListViewItem">
                     <Setter Property="HorizontalContentAlignment" Value="Stretch"/>
@@ -26,13 +27,7 @@
 
             <ListView.ItemTemplate>
                 <DataTemplate>
-                    <Grid Background="#AAE5E5E5">
-                        <StackPanel Margin="5">
-                            <TextBlock x:Name="txbName" Text="{Binding Name}" FontSize="20" FontWeight="Bold"/>
-                            <TextBlock x:Name="txbEmail" Text="{Binding Email}" FontSize="15" Foreground="DodgerBlue"/>
-                            <TextBlock x:Name="txbPhone" Text="{Binding PhoneNumber}" FontSize="15" FontStyle="Italic"/>
-                        </StackPanel>
-                    </Grid>
+                    <uc:ContactControl Contact="{Binding}"/>
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>

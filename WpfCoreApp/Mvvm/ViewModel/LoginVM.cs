@@ -71,11 +71,12 @@ namespace WpfCoreApp.Mvvm.ViewModel
         {
             if (username == "jobin" && password == "admin123")
             {
+                AppSettings.IsUserAuthenticated = true;
+                AppSettings.UserName = username;
 
                 RequestClose?.Invoke(this, EventArgs.Empty);
 
-                AppSettings.IsUserAuthenticated = true;
-                AppSettings.UserName = username;
+                
 
             }
             else

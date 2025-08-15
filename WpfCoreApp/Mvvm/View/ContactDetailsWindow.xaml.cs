@@ -13,6 +13,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using WpfCoreApp.Mvvm.Model;
 using WpfCoreApp.Mvvm.ViewModel;
+using WpfCoreApp.Mvvm.ViewModel.Commands;
 
 namespace WpfCoreApp.Mvvm.View
 {
@@ -22,14 +23,25 @@ namespace WpfCoreApp.Mvvm.View
     public partial class ContactDetailsWindow : Window
     {
         Contact contact;
-        public ContactDetailsWindow()
+        ContactsVM _contactsVM;
+        public ContactDetailsWindow(ContactsVM contactsVM)
         {
             InitializeComponent();
+            _contactsVM = contactsVM;
             this.Owner = Application.Current.MainWindow;
             this.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+           // var contactsVM =  (ContactsVM)this.DataContext;
+          //  contactsVM.SelectedContact = contact;
+            this.DataContext = contactsVM;
+            contactsVM.RequestClose += (s, e) => this.Close();
+            this.contact = contactsVM.SelectedContact;
 
-            //this.contact = contact;
-           // FillContactText();
+            btnUpdate.Command = new ContactUpdateCommand(contactsVM);
+            btnUpdate.CommandParameter = contactsVM.SelectedContact;
+            
+            btnDelete.Command = new ContactDeleteCommand(contactsVM);
+            btnDelete.CommandParameter = contactsVM.SelectedContact;
+
         }
 
         //void FillContactText()

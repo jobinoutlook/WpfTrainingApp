@@ -1,4 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.Identity.Client;
 using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
@@ -39,6 +40,8 @@ namespace WpfCoreApp.Mvvm.ViewModel
             set { contacts = value; }
 
         }
+
+        public event EventHandler? RequestClose;
 
         public ContactsVM()
         {
@@ -91,9 +94,24 @@ namespace WpfCoreApp.Mvvm.ViewModel
             }
 
             
-
+            
 
         }
 
+        public void UpdateContact()
+        {
+            _appDbContext?.Contacts.Update(SelectedContact);
+            _appDbContext?.SaveChanges();
+            LoadContacts();
+            RequestClose?.Invoke(this, EventArgs.Empty);
+        }
+
+        public void DeleteContact()
+        {
+            _appDbContext?.Remove(SelectedContact);
+            _appDbContext?.SaveChanges();
+            LoadContacts();
+            RequestClose?.Invoke(this, EventArgs.Empty);
+        }
     }
 }

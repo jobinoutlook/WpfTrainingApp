@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using WpfCoreApp.EF;
 using WpfCoreApp.Mvvm.Model;
 using WpfCoreApp.Mvvm.ViewModel;
 
@@ -21,36 +22,62 @@ namespace WpfCoreApp.Mvvm.View
     /// </summary>
     public partial class ContactsWindow : Window
     {
+        ContactsVM contactsVM;
+        bool _collectionChanged = false;
         public ContactsWindow()
         {
             InitializeComponent();
-            this.DataContext = new ContactsVM();
+            contactsVM = new ContactsVM();
+
+            contactsVM.Contacts.CollectionChanged += Contacts_CollectionChanged;
+
+            this.DataContext = contactsVM;
+            //contactsVM.RequestClose += (s, e) => this.Close();
+
+            var lstContact = contactsVM.Contacts;  //_appDbctx.Contacts.ToList();
+
+            
+
+            lstviewContacts.ItemsSource = lstContact;
         }
 
-        private void listView_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        private void Contacts_CollectionChanged(object? sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
+        {
+            _collectionChanged = true;
+        }
+
+        private void lstviewContacts_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             ShowDetails();
         }
 
         private void ShowDetails()
         {
-            Contact contact = (Contact)listView.SelectedItem;
+            Contact contact = (Contact)lstviewContacts.SelectedItem;
+            contactsVM.SelectedContact = contact;
 
             if (contact != null)
             {
                 
-                ContactDetailsWindow contactDetailsWindow = new ContactDetailsWindow();
+                ContactDetailsWindow contactDetailsWindow = new ContactDetailsWindow(contactsVM);
                 contactDetailsWindow.Owner = this;
                 contactDetailsWindow.DataContext = this.DataContext;
+                //contactsVM.RequestClose += (s, e) => contactDetailsWindow.Close();
                 contactDetailsWindow.ShowDialog();
 
+                if (_collectionChanged)
+                {
+                    var lstContact = contactsVM.Contacts;  //_appDbctx.Contacts.ToList();
+                    lstviewContacts.ItemsSource = null;
+                    lstviewContacts.Items.Clear();
+                    lstviewContacts.ItemsSource = lstContact;
+                    _collectionChanged= false;
+                }
 
             }
         }
 
         
-
-       
     }
     
 }
