@@ -19,7 +19,7 @@
                 <TextBox x:Name="txtPhone" Text="{Binding SelectedContact.PhoneNumber, Mode=TwoWay}" Margin="0,0,0,5"/>
                 <Button Content="Update" x:Name="btnUpdate" Margin="0,10,0,10" />
                 <Button Content="Delete" x:Name="btnDelete" Margin="0,10,0,10"
-            Background="Red" Foreground="White" Click="btnDelete_Click"/>
+            Background="Red" Foreground="White" />
                 <Button Content="Cancel" x:Name="btnCancel" Margin="0,10,0,10" 
             Click="btnCancel_Click"/>
             </StackPanel>

@@ -77,7 +77,26 @@ namespace WpfCoreApp.Mvvm.View
             }
         }
 
-        
+        private void btnNewContact_Click(object sender, RoutedEventArgs e)
+        {
+            NewContactWindow newContactWindow = new NewContactWindow(contactsVM);
+            newContactWindow.Owner = this;
+            newContactWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            newContactWindow.ShowDialog();
+
+            _collectionChanged = true;
+            var lstContact = contactsVM.Contacts;  //_appDbctx.Contacts.ToList();
+            lstviewContacts.ItemsSource = null;
+            lstviewContacts.Items.Clear();
+            lstviewContacts.ItemsSource = lstContact;
+            _collectionChanged = false;
+
+        }
+
+        private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
+        {
+
+        }
     }
     
 }

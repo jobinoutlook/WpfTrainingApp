@@ -8,8 +8,11 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
+using System.Windows.Input;
 using WpfCoreApp.EF;
 using WpfCoreApp.Mvvm.Model;
+using WpfCoreApp.Mvvm.ViewModel.Commands;
 
 namespace WpfCoreApp.Mvvm.ViewModel
 {
@@ -49,6 +52,9 @@ namespace WpfCoreApp.Mvvm.ViewModel
             contacts = new ObservableCollection<Contact>();
             contacts.CollectionChanged += Contacts_CollectionChanged;
             _appDbContext = new AppDbContext();
+            CloseCommand = new CloseWindowCommand();
+
+            SubmitCommand = new ContactCreateCommand(this);
 
             LoadContacts();
 
@@ -113,5 +119,52 @@ namespace WpfCoreApp.Mvvm.ViewModel
             LoadContacts();
             RequestClose?.Invoke(this, EventArgs.Empty);
         }
+
+        public ICommand CloseCommand { get; }
+
+        public ICommand SubmitCommand { get; }
+
+        public void SubmitContact()
+        {
+            
+            _appDbContext?.Contacts.Add(NewContact);
+            
+            _appDbContext?.SaveChanges();
+            LoadContacts();
+            RequestClose?.Invoke(this, EventArgs.Empty);
+        }
+
+
+        private string _name;
+        private string _email;
+        private string _phoneNumber;
+
+        public string Name
+        {
+            get => _name;
+            set { _name = value; OnPropertyChanged(nameof(Name)); }
+        }
+
+        public string Email
+        {
+            get => _email;
+            set { _email = value; OnPropertyChanged(nameof(Email)); }
+        }
+
+        public string PhoneNumber
+        {
+            get => _phoneNumber;
+            set { _phoneNumber= value; OnPropertyChanged(nameof(PhoneNumber)); }
+        }
+
+        public Contact NewContact
+        {
+            get { return new Contact() { Name = _name, Email = _email, PhoneNumber = _phoneNumber }; }
+
+           // set { _name = value.Name; _email = value.Email; _phoneNumber = value.PhoneNumber; }
+        }
     }
+
+
+    
 }

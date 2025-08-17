@@ -51,15 +51,9 @@ namespace WpfCoreApp.Mvvm.View
         //    txtPhone.Text = contact.PhoneNumber;
         //}
 
-        private void btnUpdate_Click(object sender, RoutedEventArgs e)
-        {
+       
 
-        }
-
-        private void btnDelete_Click(object sender, RoutedEventArgs e)
-        {
-
-        }
+        
 
         private void btnCancel_Click(object sender, RoutedEventArgs e)
         {

@@ -7,14 +7,14 @@
         xmlns:vm="clr-namespace:WpfCoreApp.Mvvm.ViewModel"
         xmlns:uc="clr-namespace:WpfCoreApp.Controls"
         mc:Ignorable="d"
-        Title="Contacts Window (MVVM)" Height="525" Width="450">
+        Title="Contacts Window (MVVM)" Height="550" Width="455">
     <!--<Window.Resources>
         <vm:ContactsVM x:Key="vm" />
     </Window.Resources>-->
     <Grid>
         <!--DataContext="{StaticResource vm}">-->
-        <GroupBox x:Name="groupBox" Header="Search" Margin="20,0,20,0" Height="54" VerticalAlignment="Top">
-            <TextBox x:Name="txtSearch"/>
+        <GroupBox x:Name="groupBox" Header="Search" FontSize="14" Margin="20,0,20,0" Height="54" VerticalAlignment="Top">
+            <TextBox x:Name="txtSearch" TextChanged="txtSearch_TextChanged"/>
         </GroupBox>
         <ListView x:Name="lstviewContacts"  SelectionChanged="lstviewContacts_SelectionChanged"
           ScrollViewer.VerticalScrollBarVisibility="Visible"
@@ -31,6 +31,7 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+        <Button x:Name="btnNewContact" Content="New Contact" HorizontalAlignment="Center" Margin="0,469,0,0" VerticalAlignment="Top" Width="83" Height="35" Click="btnNewContact_Click"/>
 
 
 
