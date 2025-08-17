@@ -38,7 +38,7 @@ namespace WpfCoreApp.Mvvm.View
 
             
 
-            lstviewContacts.ItemsSource = lstContact;
+            lstviewContacts.ItemsSource = lstContact.OrderBy(c=>c.Name.ToLower()).ToList();
         }
 
         private void Contacts_CollectionChanged(object? sender, System.Collections.Specialized.NotifyCollectionChangedEventArgs e)
@@ -70,7 +70,7 @@ namespace WpfCoreApp.Mvvm.View
                     var lstContact = contactsVM.Contacts;  //_appDbctx.Contacts.ToList();
                     lstviewContacts.ItemsSource = null;
                     lstviewContacts.Items.Clear();
-                    lstviewContacts.ItemsSource = lstContact;
+                    lstviewContacts.ItemsSource = lstContact.OrderBy(c => c.Name.ToLower()).ToList();
                     _collectionChanged= false;
                 }
 
@@ -88,14 +88,17 @@ namespace WpfCoreApp.Mvvm.View
             var lstContact = contactsVM.Contacts;  //_appDbctx.Contacts.ToList();
             lstviewContacts.ItemsSource = null;
             lstviewContacts.Items.Clear();
-            lstviewContacts.ItemsSource = lstContact;
+            lstviewContacts.ItemsSource = lstContact.OrderBy(c => c.Name.ToLower()).ToList();
             _collectionChanged = false;
 
         }
 
         private void txtSearch_TextChanged(object sender, TextChangedEventArgs e)
         {
-
+            var lstContact = contactsVM.Contacts.Where(c => c.Name.ToLower().Contains(txtSearch.Text.ToLower())).OrderBy(o=>o.Name).ToList();
+            lstviewContacts.ItemsSource = null;
+            lstviewContacts.Items.Clear();
+            lstviewContacts.ItemsSource = lstContact;
         }
     }
     
