@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace EvernoteClone.ViewModel.Helpers
+namespace EvernoteClone.ViewModel
 {
     internal static class DatabaseHelper
     {
@@ -22,7 +22,7 @@ namespace EvernoteClone.ViewModel.Helpers
 
             try
             {
-                _appDbContext.Add<T>(Item);
+                _appDbContext.Add(Item);
                 result = true;
             }
             catch (Exception) { }
@@ -37,7 +37,7 @@ namespace EvernoteClone.ViewModel.Helpers
 
             try
             {
-                _appDbContext.Update<T>(Item);
+                _appDbContext.Update(Item);
                 result = true;
             }
             catch (Exception) { }
@@ -51,7 +51,7 @@ namespace EvernoteClone.ViewModel.Helpers
 
             try
             {
-                _appDbContext.Remove<T>(Item);
+                _appDbContext.Remove(Item);
                 result = true;
             }
             catch (Exception) { }
