@@ -1,4 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore;
+﻿using EvernoteClone.Model;
+using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using System;
 using System.Collections.Generic;
@@ -15,5 +16,12 @@ namespace EvernoteClone.EF
             var connectionString = AppConfig.GetConnectionString("DefaultConnection");
             optionsBuilder.UseSqlServer(connectionString);
         }
+
+
+        public DbSet<User>Users { get; set; }
+
+        public DbSet<Notebook> Notebooks { get; set; }
+
+        public DbSet<Note> Notes { get; set; }
     }
 }

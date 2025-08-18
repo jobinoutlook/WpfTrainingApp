@@ -9,9 +9,13 @@ namespace EvernoteClone.Model
     {
         [Key]
         public int Id { get; set; }
+        [MaxLength(50)]
         public string Name { get; set; }
-        public string Lastname { get; set; }
+        [MaxLength(50)]
+        public string? Lastname { get; set; }
+        [MaxLength(50)]
         public string Username { get; set; }
+        [MaxLength(50)]
         public string Password { get; set; }
     }
 }
