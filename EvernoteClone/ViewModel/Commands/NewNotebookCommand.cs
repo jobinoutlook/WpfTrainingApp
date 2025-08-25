@@ -7,14 +7,19 @@ using System.Windows.Input;
 
 namespace EvernoteClone.ViewModel.Commands
 {
-    internal class NewNotebookCommand : ICommand
+    public class NewNotebookCommand : ICommand
     {
-        NotesVM VM { get; set; }
-        public event EventHandler? CanExecuteChanged;
+        public NotesVM VM;
 
-        public NewNotebookCommand(NotesVM notesVM)
+        public NewNotebookCommand(NotesVM vm)
         {
-            VM=notesVM;
+            VM = vm;
+        }
+
+        public event EventHandler? CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
         }
 
         public bool CanExecute(object? parameter)
@@ -24,7 +29,7 @@ namespace EvernoteClone.ViewModel.Commands
 
         public void Execute(object? parameter)
         {
-            //TODO
+            VM.CreateNotebook();
         }
     }
 }

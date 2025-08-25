@@ -1,4 +1,5 @@
 ﻿using EvernoteClone.EF;
+using log4net;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
@@ -8,8 +9,11 @@ using System.Threading.Tasks;
 
 namespace EvernoteClone.ViewModel
 {
-    internal static class DatabaseHelper
+    public static class DatabaseHelper
     {
+        private static readonly ILog log = LogManager.GetLogger(typeof(DatabaseHelper));
+
+
         private static AppDbContext _appDbContext { get; set; }
         static DatabaseHelper()
         {
@@ -23,9 +27,14 @@ namespace EvernoteClone.ViewModel
             try
             {
                 _appDbContext.Add(Item);
+                _appDbContext.SaveChanges();
                 result = true;
             }
-            catch (Exception) { }
+            catch (Exception ex) { 
+            
+                log.Error(ex);
+            
+            }
                       
 
             return result;
@@ -38,9 +47,13 @@ namespace EvernoteClone.ViewModel
             try
             {
                 _appDbContext.Update(Item);
+                _appDbContext.SaveChanges();
                 result = true;
             }
-            catch (Exception) { }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+            }
             
             return result;
         }
@@ -54,7 +67,10 @@ namespace EvernoteClone.ViewModel
                 _appDbContext.Remove(Item);
                 result = true;
             }
-            catch (Exception) { }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+            }
 
             return result;
         }
@@ -62,10 +78,20 @@ namespace EvernoteClone.ViewModel
         
 
         // Generic read: Get all entities of type T
-        public static async Task<List<T>> ReadAll<T>() where T : class
+        public static async Task<List<T>> ReadAllAsync<T>() where T : class
         {
+            var items = new List<T>();
+            try
+            {
+                items = await _appDbContext.Set<T>().ToListAsync();
+                
+            }
+            catch (Exception ex)
+            {
+                log.Error(ex);
+            }
 
-            return await _appDbContext.Set<T>().ToListAsync();
+            return items;
         }
 
         // Generic read: Get by primary key (assuming single key)

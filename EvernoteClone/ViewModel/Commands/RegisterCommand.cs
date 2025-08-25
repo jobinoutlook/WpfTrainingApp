@@ -7,12 +7,15 @@ using System.Windows.Input;
 
 namespace EvernoteClone.ViewModel.Commands
 {
-    internal class RegisterCommand : ICommand
+    public class RegisterCommand : ICommand
     {
 
         public LoginVM VM { get; set; }
-        public event EventHandler? CanExecuteChanged;
-
+        public event EventHandler? CanExecuteChanged
+        {
+            add { CommandManager.RequerySuggested += value; }
+            remove { CommandManager.RequerySuggested -= value; }
+        }
         public RegisterCommand(LoginVM vm)
         {
             VM = vm;

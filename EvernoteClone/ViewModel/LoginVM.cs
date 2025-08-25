@@ -8,10 +8,9 @@ using System.Threading.Tasks;
 
 namespace EvernoteClone.ViewModel
 {
-    internal class LoginVM
+    public class LoginVM
     {
 		private User user;
-			
 
 		public User User
 		{
@@ -19,14 +18,13 @@ namespace EvernoteClone.ViewModel
 			set { user = value; }
 		}
 
-		public RegisterCommand RegisterCommand { get; set; }
 		public LoginCommand LoginCommand { get; set; }
+		public RegisterCommand RegisterCommand { get; set; }
 
 		public LoginVM()
 		{
-			RegisterCommand = new RegisterCommand(this);
 			LoginCommand = new LoginCommand(this);
-
+			RegisterCommand = new RegisterCommand(this);
 		}
 
 	}
