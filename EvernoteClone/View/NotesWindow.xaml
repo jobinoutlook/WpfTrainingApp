@@ -39,7 +39,8 @@
                             <uc:DisplayNotebook.ContextMenu>
                                 <ContextMenu>
                                     <MenuItem Header="Rename" 
-                                              Command="{Binding Source={StaticResource nvm},Path=EditCommand}"/>
+                                              Command="{Binding Source={StaticResource nvm},Path=EditCommand}"
+                                              CommandParameter="{Binding Source={StaticResource nvm},Path=SelectedNotebook}"/>
                                 </ContextMenu>
                             </uc:DisplayNotebook.ContextMenu>
                         </uc:DisplayNotebook>
