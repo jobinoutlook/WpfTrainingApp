@@ -7,11 +7,11 @@
         <ResourceDictionary Source="/Components/Resource.Base.Value.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <Style TargetType="{x:Type Button}">
+    <!--<Style TargetType="{x:Type Button}">
         <Setter Property="Foreground" Value="{StaticResource foregroundColor}"/>
         <Setter Property="FontSize" Value="{StaticResource ResourceKey=FontSize.Default}"/>
         <Setter Property="Margin" Value="{StaticResource ResourceKey=Margin.Default}" />
-    </Style>
+    </Style>-->
 
     <Style TargetType="{x:Type Button}" x:Key="StyleNumberButton">
         <Setter Property="Foreground" Value="{StaticResource foregroundColor}"/>
