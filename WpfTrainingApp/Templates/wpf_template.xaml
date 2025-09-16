@@ -42,6 +42,17 @@
 
         </ControlTemplate>
 
+        <ControlTemplate x:Key="roundbutton" TargetType="Button">
+            <Grid>
+                <Border x:Name="btnborder" Width="85" Height="85" Background="{TemplateBinding Background}" CornerRadius="100" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"/>
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+               
+                
+            </Grid>
+
+
+        </ControlTemplate>
+
     </Window.Resources>
     <Grid>
         <Button x:Name="button" Content="Save Changes" HorizontalAlignment="Left" Margin="115,104,0,0" VerticalAlignment="Top" Width="100" Height="30" 
@@ -49,6 +60,8 @@
         <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="350,134,0,0" VerticalAlignment="Top" Width="85" Height="30" Template="{DynamicResource btnTemplate}"/>
         <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Margin="295,219,0,0" VerticalAlignment="Top" Width="90" Height="50" Template="{DynamicResource imageBtnTemplate}"/>
         <Button x:Name="button2_Copy" Content="Button" HorizontalAlignment="Left" Margin="440,279,0,0" VerticalAlignment="Top" Width="130" Height="50" Template="{DynamicResource imageBtnTemplate2}"/>
+        <Button x:Name="btnRound" Content="Exit" HorizontalAlignment="Left" Margin="120,239,0,0" VerticalAlignment="Top" Width="85" Height="85" Template="{DynamicResource roundbutton}"/>
+
     </Grid>
 
 </Window>
