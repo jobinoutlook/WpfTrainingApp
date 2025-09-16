@@ -1,0 +1,54 @@
+﻿<Window x:Class="WpfTrainingApp.Templates.wpf_template"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTrainingApp.Templates"
+        mc:Ignorable="d"
+        Title="wpf_template" Height="400" Width="600">
+    <Window.Resources>
+        <ControlTemplate x:Key="btnTemplate" TargetType="Button">
+            <Grid>
+                <Border x:Name="btnborder" Background="{TemplateBinding Background}" CornerRadius="8" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"/>
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Center" />
+            </Grid>
+            <ControlTemplate.Triggers>
+                <Trigger Property="IsMouseOver" Value="True">
+                    <Setter Property="Cursor" TargetName="btnborder" Value="Hand"/>
+                    <Setter Property="Background" TargetName="btnborder" Value="Yellow"/>
+                </Trigger>
+            </ControlTemplate.Triggers>
+
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="imageBtnTemplate" TargetType="Button">
+            <Grid>
+                <Border x:Name="btnborder" Background="{TemplateBinding Background}" CornerRadius="8" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"/>
+                <ContentPresenter HorizontalAlignment="Center" VerticalAlignment="Top" Margin="0,5,0,0" />
+                <Image Source="/Image/file_32.png" Width="24" Height="24" VerticalAlignment="Center" Margin="33,19,33,0"/>
+            </Grid>
+
+
+        </ControlTemplate>
+
+        <ControlTemplate x:Key="imageBtnTemplate2" TargetType="Button">
+            <Grid>
+                <Border x:Name="btnborder" Background="{TemplateBinding Background}" CornerRadius="8" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}"/>
+                <!--<ContentPresenter HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" />-->
+                <Label Content="Save Changes" HorizontalAlignment="Right" VerticalAlignment="Center" Margin="0,0,10,0" />
+                <Image Source="/Image/file_32.png" Width="24" Height="24" HorizontalAlignment="Left" VerticalAlignment="Center" Margin="10,0,0,0"/>
+            </Grid>
+
+
+        </ControlTemplate>
+
+    </Window.Resources>
+    <Grid>
+        <Button x:Name="button" Content="Save Changes" HorizontalAlignment="Left" Margin="115,104,0,0" VerticalAlignment="Top" Width="100" Height="30" 
+                Background="ForestGreen" BorderBrush="Red" Template="{DynamicResource btnTemplate}" BorderThickness="3,3,3,3"/>
+        <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="350,134,0,0" VerticalAlignment="Top" Width="85" Height="30" Template="{DynamicResource btnTemplate}"/>
+        <Button x:Name="button2" Content="Button" HorizontalAlignment="Left" Margin="295,219,0,0" VerticalAlignment="Top" Width="90" Height="50" Template="{DynamicResource imageBtnTemplate}"/>
+        <Button x:Name="button2_Copy" Content="Button" HorizontalAlignment="Left" Margin="440,279,0,0" VerticalAlignment="Top" Width="130" Height="50" Template="{DynamicResource imageBtnTemplate2}"/>
+    </Grid>
+
+</Window>
