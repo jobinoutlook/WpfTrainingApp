@@ -7,7 +7,8 @@
         mc:Ignorable="d"
         Title="wpf_event_triggers" Height="200" Width="300">
     <Window.Resources>
-        <Style TargetType="TextBox">
+        <!-- Scoped Style with EventTrigger -->
+        <Style x:Key="FocusAnimationStyle" TargetType="TextBox">
             <Setter Property="RenderTransform">
                 <Setter.Value>
                     <ScaleTransform ScaleX="1" ScaleY="1"/>
@@ -31,7 +32,10 @@
     </Window.Resources>
 
     <StackPanel Margin="20">
-        <TextBox Margin="0 10" Height="30" />
-        <TextBox Margin="0 10" Height="30" />
+        <!-- This TextBox uses the animation style -->
+        <TextBox Style="{StaticResource FocusAnimationStyle}" Height="30" Margin="0 10"/>
+
+        <!-- This TextBox remains unaffected -->
+        <TextBox Height="30" Margin="0 10"/>
     </StackPanel>
 </Window>
