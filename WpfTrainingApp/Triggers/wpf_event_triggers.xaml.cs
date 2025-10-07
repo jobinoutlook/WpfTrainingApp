@@ -15,11 +15,11 @@ using System.Windows.Shapes;
 namespace WpfTrainingApp.Triggers
 {
     /// <summary>
-    /// Interaction logic for wpf_temp_image_butt.xaml
+    /// Interaction logic for wpf_event_triggers.xaml
     /// </summary>
-    public partial class wpf_temp_image_butt : Window
+    public partial class wpf_event_triggers : Window
     {
-        public wpf_temp_image_butt()
+        public wpf_event_triggers()
         {
             InitializeComponent();
         }
