@@ -40,7 +40,7 @@
         <Button x:Name="btnCancel"  
                 Content="Cancel" HorizontalAlignment="Center" Margin="0,258,0,0" VerticalAlignment="Top" Width="64" Click="btnCancel_Click"/>
         <Label x:Name="label" Content="{Binding Message}" Foreground="OrangeRed" HorizontalAlignment="Center" Margin="0,294,0,0" VerticalAlignment="Top"/>
-        <Label x:Name="lblUsnPwd" Content="username=jobin , password=admin123" FontStyle="Italic" HorizontalAlignment="Left" Margin="48,334,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.263,0.579"/>
+        <Label x:Name="lblUsnPwd" Content="username=jobin , password=admin123" FontStyle="Italic" HorizontalAlignment="Left" Margin="48,317,0,0" VerticalAlignment="Top" RenderTransformOrigin="-0.263,0.579"/>
     </Grid>
 </Window>
 <!--IsEnabled="{Binding Password, Converter={StaticResource stringToBool}}"-->
