@@ -7,24 +7,21 @@
         <ResourceDictionary Source="/Components/Resource.Base.Value.xaml"/>
     </ResourceDictionary.MergedDictionaries>
 
-    <!--<Style TargetType="{x:Type Button}">
+    <Style TargetType="{x:Type Button}" x:Key="DefaultButton">
         <Setter Property="Foreground" Value="{StaticResource foregroundColor}"/>
         <Setter Property="FontSize" Value="{StaticResource ResourceKey=FontSize.Default}"/>
         <Setter Property="Margin" Value="{StaticResource ResourceKey=Margin.Default}" />
-    </Style>-->
+    </Style>
 
-    <Style TargetType="{x:Type Button}" x:Key="StyleNumberButton">
-        <Setter Property="Foreground" Value="{StaticResource foregroundColor}"/>
-        <Setter Property="FontSize" Value="20"/>
-        <Setter Property="Margin" Value="5"/>
+    <Style TargetType="{x:Type Button}" x:Key="StyleNumberButton" BasedOn="{StaticResource DefaultButton}">
         <Setter Property="Background" Value="{StaticResource numberColor}"/>
     </Style>
 
-    <Style TargetType="Button" x:Key="StyleOperatorButton" BasedOn="{StaticResource StyleNumberButton}">
+    <Style TargetType="Button" x:Key="StyleOperatorButton" BasedOn="{StaticResource DefaultButton}">
         <Setter Property="Background" Value="{StaticResource operatorColor}"/>
     </Style>
 
-    <Style TargetType="Button" x:Key="StyleFunctionButton" BasedOn="{StaticResource StyleNumberButton}">
+    <Style TargetType="Button" x:Key="StyleFunctionButton" BasedOn="{StaticResource DefaultButton}">
         <Setter Property="Background" Value="LightGray"/>
         <Setter Property="Foreground" Value="Black"/>
     </Style>

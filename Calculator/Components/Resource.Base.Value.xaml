@@ -6,6 +6,6 @@
 
 
     <System:Thickness x:Key="Margin.Default">5,5,5,5</System:Thickness>
-    <sys:Double x:Key="FontSize.Default">25</sys:Double>
+    <sys:Double x:Key="FontSize.Default">20</sys:Double>
 
 </ResourceDictionary>
