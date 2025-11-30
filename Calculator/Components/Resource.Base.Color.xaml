@@ -4,5 +4,6 @@
     <SolidColorBrush x:Key="operatorColor" Color="Orange"/>
     <SolidColorBrush x:Key="functionColor" Color="Gray"/>
     <SolidColorBrush x:Key="foregroundColor" Color="White"/>
+    <SolidColorBrush x:Key="backgroundColor" Color="LightGray"/>
 
 </ResourceDictionary>
