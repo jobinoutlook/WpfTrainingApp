@@ -12,7 +12,7 @@
         Title="SubWindow" Height="445" Width="500">
     <Grid>
         <Button x:Name="button" Content="Shutdown" HorizontalAlignment="Center" Margin="0,210,0,0" VerticalAlignment="Top" Click="button_Click" RenderTransformOrigin="0.252,1.002"/>
-        <Button x:Name="button1" Content="Button" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Width="60" Click="button1_Click"/>
+        <Button x:Name="button1" Content="Close" HorizontalAlignment="Center" Margin="0,270,0,0" VerticalAlignment="Top" Width="60" Click="button1_Click"/>
 
     </Grid>
 </Window>

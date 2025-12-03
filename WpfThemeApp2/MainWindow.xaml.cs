@@ -30,7 +30,14 @@ namespace WpfThemeApp2
         private void button1_Click(object sender, RoutedEventArgs e)
         {
             LoginWindow loginWindow = new LoginWindow();
-            loginWindow.Show();
+            loginWindow.Topmost = true;
+            loginWindow.ShowDialog();
+        }
+
+        private void button2_Click(object sender, RoutedEventArgs e)
+        {
+            RegularSubWindow subWindow = new RegularSubWindow();
+            subWindow.Show();
         }
     }
 }
