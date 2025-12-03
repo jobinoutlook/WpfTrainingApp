@@ -32,7 +32,7 @@ namespace Calculator
             InitializeComponent();
             lblResult.Content = 0;
             SourceInitialized += (s, e) => HideMaximizeButton();
-
+            
             AssignButtonEvents();
         }
 

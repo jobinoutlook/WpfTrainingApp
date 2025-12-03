@@ -10,7 +10,7 @@
         
     </Window.Resources>
     <Grid>
-        <Button x:Name="btn1" Style="{DynamicResource butt_style}" Content="Button 1" HorizontalAlignment="Left" Margin="270,99,0,0" VerticalAlignment="Top" Height="30" Width="105"/>
+        <Button x:Name="btn1" Style="{StaticResource butt_style}" Content="Button 1" HorizontalAlignment="Left" Margin="270,99,0,0" VerticalAlignment="Top" Height="30" Width="105"/>
         <Button x:Name="btn2" Style="{DynamicResource butt_style}" Content="Button 2" HorizontalAlignment="Left" Margin="270,149,0,0" VerticalAlignment="Top" Height="30" Width="105"/>
         <Button x:Name="btn3" Style="{DynamicResource butt_style}" Content="Button 3" HorizontalAlignment="Left" Margin="270,204,0,0" VerticalAlignment="Top" Height="30" Width="105"/>
         <Button x:Name="btn4" Style="{DynamicResource butt_style}" Content="Button 4" HorizontalAlignment="Left" Margin="270,259,0,0" VerticalAlignment="Top" Height="30" />
