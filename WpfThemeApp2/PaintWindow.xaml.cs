@@ -46,9 +46,9 @@ namespace WpfThemeApp2
                 StrokeThickness = 2,
                 Points = new PointCollection()
                 {
-                    new Point(190,195),
+                    new Point(192,196),
                     new Point(200,200),
-                    new Point(195,190)
+                    new Point(196,192)
                 }
             };
             paintCanvas.Children.Add(polygon);
@@ -64,6 +64,20 @@ namespace WpfThemeApp2
             };
             paintCanvas.Children.Add(yaxis);
 
+            Polygon polygonY = new Polygon
+            {
+                Stroke = Brushes.Black,
+                Fill = Brushes.Black,
+                StrokeThickness = 2,
+                Points = new PointCollection()
+                {
+                    new Point(2,192),
+                    new Point(5,200),
+                    new Point(8,192)
+                }
+            };
+            paintCanvas.Children.Add(polygonY);
+
             Line xaxis = new Line
             {
                 X1 = 5,
@@ -74,7 +88,60 @@ namespace WpfThemeApp2
                 StrokeThickness = 2
             }; 
             paintCanvas.Children.Add(xaxis);
+
+            Polygon polygonX = new Polygon
+            {
+                Stroke = Brushes.Black,
+                Fill = Brushes.Black,
+                StrokeThickness = 2,
+                Points = new PointCollection()
+                {
+                    new Point(192,2),
+                    new Point(200,5),
+                    new Point(192,8)
+                }
+            };
+            paintCanvas.Children.Add(polygonX);
+
+            Line gridLine= new Line
+            {
+                X1 = 5,
+                Y1 = 202,
+                X2 = 202,
+                Y2 = 202,
+                Stroke = Brushes.LightGray,
+                StrokeThickness = 1
+            };
+            paintCanvas.Children.Add(gridLine);
+
+           Line line2= new Line
+            {
+                X1 = 202,
+                Y1 = 5,
+                X2 = 202,
+                Y2 = 202,
+                Stroke = Brushes.LightGray,
+                StrokeThickness = 1
+            };
+            paintCanvas.Children.Add(line2);
         }
-        
+
+        private void btnPrint_Click(object sender, RoutedEventArgs e)
+        {
+            PrintDialog printDialog = new PrintDialog();
+
+            if (printDialog.ShowDialog() == true)
+            {
+                try
+                {
+                    // Print the Canvas directly
+                    printDialog.PrintVisual(paintCanvas, "Canvas Print");
+                }
+                catch(System.Runtime.CompilerServices.RuntimeWrappedException)
+                {
+                    CenteredMessageBox.Show(this, "An error occurred while trying to print the canvas.", "Print Error", MessageBoxButton.OK, MessageBoxImage.Error);
+                }
+            }
+        }
     }
 }

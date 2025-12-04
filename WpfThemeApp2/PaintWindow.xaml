@@ -7,13 +7,14 @@
         Style="{StaticResource CustomWindowStyle}"
         mc:Ignorable="d"
         ShowInTaskbar="False"
-        Title="PaintWindow" Height="400" Width="600">
+        Title="PaintWindow" Height="400" Width="645">
     <Grid>
-        <Canvas x:Name="paintCanvas">
+        <Canvas x:Name="paintCanvas" Margin="0,0,95,0">
             <Canvas.RenderTransform>
                 <!-- Flip Y axis -->
                 <ScaleTransform ScaleY="-1" CenterY="183"/>
             </Canvas.RenderTransform>
         </Canvas>
+        <Button x:Name="btnPrint" Content="Print" HorizontalAlignment="Left" Margin="570,10,0,0" VerticalAlignment="Top" Width="60" Click="btnPrint_Click" />
     </Grid>
 </Window>
