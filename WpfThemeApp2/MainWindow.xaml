@@ -7,11 +7,33 @@
         mc:Ignorable="d"
         Style="{StaticResource CustomWindowStyle}"
         Tag="MainWindow"
-        Title="MainWindow" Height="450" Width="800">
+        Title="Theme App" Height="450" Width="800">
     <Grid>
-        <Button x:Name="button" Content="Subwindow" HorizontalAlignment="Left" Margin="310,200,0,0" VerticalAlignment="Top" Click="button_Click"/>
-        <Button x:Name="button1" Content="LoginWindow" HorizontalAlignment="Left" Margin="420,200,0,0" VerticalAlignment="Top" Click="button1_Click"/>
-        <Button x:Name="button2" Content="Regular subwindow" HorizontalAlignment="Left" Margin="540,200,0,0" VerticalAlignment="Top" Width="115" Click="button2_Click"/>
+        <Menu x:Name="menu" Margin="0,0,0,395">
+            
+            <MenuItem Header="App">
+                <MenuItem Header="Exit" Click="Exit_Click"/>
+            </MenuItem>
+            
+            <MenuItem Header="Edit">
+                <MenuItem Header="Options" Click="Options_Click"/>
+            </MenuItem>
+            
+            <MenuItem Header="Utils">
+                <MenuItem Header="Canvas" Click="Canvas_Click"/>
+            </MenuItem>
+
+            <MenuItem Header="Windows">
+                <MenuItem Header="SubWindow" Click="SubWindow_Click"/>
+                <MenuItem Header="LoginWindow" Click="LoginWindow_Click"/>
+                <MenuItem Header="RegularSubWindow" Click="RegularSubWindow_Click"/>
+            </MenuItem>
+            
+            <MenuItem Header="Help">
+                <MenuItem Header="About" Click="About_Click"/>
+            </MenuItem>
+            
+        </Menu>
 
     </Grid>
 </Window>
