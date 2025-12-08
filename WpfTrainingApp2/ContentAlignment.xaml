@@ -1,0 +1,26 @@
+﻿<Window x:Class="WpfTrainingApp2.ContentAlignment"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTrainingApp2"
+        mc:Ignorable="d"
+        Title="ContentAlignment" Height="450" Width="800">
+    <Grid>
+        <Grid>
+            <StackPanel>
+                <Button HorizontalContentAlignment="Left" Background="Yellow" FontSize="22">Left</Button>
+                <Button HorizontalContentAlignment="Center" Background="Yellow" FontSize="22">Center</Button>
+                <Button HorizontalContentAlignment="Right" Background="Yellow" FontSize="22">Right</Button>
+            </StackPanel>
+        </Grid>
+
+        <Grid Margin="0,200,0,0">
+            <StackPanel Orientation="Vertical" >
+                <Button VerticalContentAlignment="Top" Background="LightBlue" FontSize="22" Height="70">Top</Button>
+                <Button VerticalContentAlignment="Center" Background="LightBlue" FontSize="22" Height="70">Center</Button>
+                <Button VerticalContentAlignment="Bottom" Background="LightBlue" FontSize="22" Height="70">Bottom</Button>
+            </StackPanel>
+        </Grid>
+    </Grid>
+</Window>

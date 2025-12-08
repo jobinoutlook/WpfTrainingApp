@@ -1,0 +1,18 @@
+﻿<Window x:Class="WpfTrainingApp3.CanvasPanel"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTrainingApp3"
+        mc:Ignorable="d"
+        Title="CanvasPanel" Height="445" Width="745">
+
+    <Canvas>
+        <Button Content="Top-Left" Canvas.Top="20" Canvas.Left="20" Background="Yellow" Canvas.ZIndex="10"/>
+        <Button Content="Top-Right" Canvas.Top="20" Canvas.Right="20" Background="Yellow"/>
+        <Button Content="Bottom-Left" Canvas.Bottom="20" Canvas.Left="20" Background="Yellow"/>
+        <Button Content="Bottom-Right" Canvas.Bottom="20" Canvas.Right="20" Background="Yellow"/>
+    </Canvas>
+
+
+</Window>

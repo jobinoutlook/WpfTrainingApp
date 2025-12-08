@@ -21,6 +21,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfThemeApp", "WpfThemeApp\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Wpf_Ultimate", "Wpf_Ultimate\Wpf_Ultimate.csproj", "{B7AC6D66-B599-42A3-9FD7-6F3A8C0CB2E0}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTrainingApp2", "WpfTrainingApp2\WpfTrainingApp2.csproj", "{060309A3-729B-49B2-AC26-9C57B4BDE22A}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTrainingApp3", "WpfTrainingApp3\WpfTrainingApp3.csproj", "{657EFACD-75C0-4F04-9D19-4CA963B2D48B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -63,6 +67,14 @@ Global
 		{B7AC6D66-B599-42A3-9FD7-6F3A8C0CB2E0}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{B7AC6D66-B599-42A3-9FD7-6F3A8C0CB2E0}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{B7AC6D66-B599-42A3-9FD7-6F3A8C0CB2E0}.Release|Any CPU.Build.0 = Release|Any CPU
+		{060309A3-729B-49B2-AC26-9C57B4BDE22A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{060309A3-729B-49B2-AC26-9C57B4BDE22A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{060309A3-729B-49B2-AC26-9C57B4BDE22A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{060309A3-729B-49B2-AC26-9C57B4BDE22A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{657EFACD-75C0-4F04-9D19-4CA963B2D48B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{657EFACD-75C0-4F04-9D19-4CA963B2D48B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{657EFACD-75C0-4F04-9D19-4CA963B2D48B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{657EFACD-75C0-4F04-9D19-4CA963B2D48B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

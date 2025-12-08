@@ -1,0 +1,21 @@
+﻿<Window x:Class="WpfTrainingApp2.SkewTransform"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTrainingApp2"
+        mc:Ignorable="d"
+        Title="SkewTransform" Height="455" Width="715">
+    <Grid>
+        <Button Content="Skew" Background="Orange" Width="110" Height="45" Margin="572,50,33,344">
+            <Button.RenderTransform>
+                <SkewTransform AngleY="10"/>
+            </Button.RenderTransform>
+        </Button>
+        <Button Content="Skew" Background="Orange" Width="110" Height="45" Margin="572,99,33,295">
+            <Button.RenderTransform>
+                <SkewTransform AngleY="10" AngleX="10"/>
+            </Button.RenderTransform>
+        </Button>
+    </Grid>
+</Window>

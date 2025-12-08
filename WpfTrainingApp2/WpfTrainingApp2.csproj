@@ -4,17 +4,16 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{B7AC6D66-B599-42A3-9FD7-6F3A8C0CB2E0}</ProjectGuid>
+    <ProjectGuid>{060309A3-729B-49B2-AC26-9C57B4BDE22A}</ProjectGuid>
     <OutputType>WinExe</OutputType>
-    <RootNamespace>Wpf_Ultimate</RootNamespace>
-    <AssemblyName>Wpf_Ultimate</AssemblyName>
-    <TargetFrameworkVersion>v4.8</TargetFrameworkVersion>
+    <RootNamespace>WpfTrainingApp2</RootNamespace>
+    <AssemblyName>WpfTrainingApp2</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
     <WarningLevel>4</WarningLevel>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
     <Deterministic>true</Deterministic>
-    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -56,6 +55,39 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ContentAlignment.xaml.cs">
+      <DependentUpon>ContentAlignment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="EADockPanel.xaml.cs">
+      <DependentUpon>EADockPanel.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ElementAlignment.xaml.cs">
+      <DependentUpon>ElementAlignment.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="RotateTransform.xaml.cs">
+      <DependentUpon>RotateTransform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ScaleTransform.xaml.cs">
+      <DependentUpon>ScaleTransform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="SkewTransform.xaml.cs">
+      <DependentUpon>SkewTransform.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VisibilityExample.xaml.cs">
+      <DependentUpon>VisibilityExample.xaml</DependentUpon>
+    </Compile>
+    <Page Include="ContentAlignment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="EADockPanel.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ElementAlignment.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -68,6 +100,22 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Page Include="RotateTransform.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ScaleTransform.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="SkewTransform.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VisibilityExample.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Properties\AssemblyInfo.cs">
@@ -94,12 +142,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="VerticalPin.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <Resource Include="HorizontalPin.jpg" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

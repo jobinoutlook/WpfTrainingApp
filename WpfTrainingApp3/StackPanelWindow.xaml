@@ -1,0 +1,27 @@
+﻿<Window x:Class="WpfTrainingApp3.StackPanelWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTrainingApp3"
+        mc:Ignorable="d"
+        Title="StackPanelWindow" Height="450" Width="800">
+    <StackPanel Background="DeepSkyBlue">
+
+        <StackPanel Orientation="Horizontal" HorizontalAlignment="Center">
+            <Button Content="January" Width="100" Height="35" Margin="5" Background="LightBlue"/>
+            <Button Content="February" Width="100" Height="35" Margin="5" Background="LightBlue" />
+            <Button Content="March" Width="100" Height="35" Margin="5" Background="LightBlue"/>
+            <Button Content="April" Width="100" Height="35" Margin="5" Background="LightBlue"/>
+        </StackPanel>
+        
+        <StackPanel>
+            <Button Content="Button One" Width="100" Height="35" Margin="5" Background="Yellow" HorizontalAlignment="Left"/>
+            <Button Content="Button Two" Width="100" Height="35" Margin="5" Background="Yellow" HorizontalAlignment="Left" />
+            <Button Content="Button Three" Width="100" Height="35" Margin="5" Background="Yellow" HorizontalAlignment="Left"/>
+            <Button Content="Button Four" Width="100" Height="35" Margin="5" Background="Yellow" HorizontalAlignment="Left"/>
+        </StackPanel>
+    </StackPanel>
+        
+
+</Window>
