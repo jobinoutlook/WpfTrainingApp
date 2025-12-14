@@ -29,9 +29,10 @@
             </Button>
         </StackPanel>
         
-        <Grid Name="parentGrid" Background="Violet" Grid.IsSharedSizeScope="True" MouseDown="parentGrid_MouseDown">
+        <Grid Name="parentGrid" Background="Violet" Grid.IsSharedSizeScope="True" MouseDown="parentGrid_MouseDown" MouseEnter="parentGrid_MouseEnter" MouseLeave="parentGrid_MouseLeave">
 
-            <!--<Grid Name="layer0" MouseEnter="layer0_MouseEnter">
+            <Grid Name="layer0" MouseEnter="layer0_MouseEnter" Background="LightBlue">
+
                 <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition />
@@ -45,24 +46,24 @@
                 </Grid.ColumnDefinitions>
 
 
-                <StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="4">
+                <!--<StackPanel Grid.Row="0" Grid.Column="0" Grid.RowSpan="4">
 
                     <Button Content="Newest" Width="70" Height="30" Margin="0,0,0,1" ToolTip="Display the newest articles..."/>
                     <Button Content="Recent" Height="30" Margin="0,1,0,1" ToolTip="Display articles posted within the last 7 days..."/>
                     <Button Content="Options" Height="30" Margin="0,1,0,1" ToolTip="Customize article timeframes..."/>
                     <Button Content="FAQ" Height="30" Margin="0,1,0,1" ToolTip="Frequently Asked Questions"/>
                     <Button Content="Help" Height="30" Margin="0,1,0,1" ToolTip="Get online help..."/>
-                </StackPanel>
+                </StackPanel>-->
 
 
-                <ListBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="4" ToolTip="Click on an article to read it...">
+                <!--<ListBox Grid.Column="1" Grid.Row="0" Grid.RowSpan="4" ToolTip="Click on an article to read it...">
                     <ListBoxItem>Dow Targets</ListBoxItem>
                     <ListBoxItem>Credit Spreads</ListBoxItem>
                     <ListBoxItem>New Ideas in Risk Management</ListBoxItem>
                     <ListBoxItem>Understanding Theta</ListBoxItem>
-                </ListBox>
+                </ListBox>-->
 
-            </Grid>-->
+            </Grid>
 
             <Grid Name="gridlayer1" Visibility="Collapsed">
                 <Grid.ColumnDefinitions>
@@ -71,9 +72,9 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Grid Grid.Column="1" MouseEnter="panel1_MouseEnter" Background="LightBlue">
+                <Grid Grid.Column="1" MouseEnter="panel1_MouseEnter" MouseLeave="panel1_MouseLeave" Background="LightBlue">
 
-                    <Grid.RowDefinitions>
+                    <Grid.RowDefinitions> 
                         <RowDefinition Height="auto" />
                         <RowDefinition />
                     </Grid.RowDefinitions>
@@ -110,7 +111,7 @@
                     <ColumnDefinition SharedSizeGroup="column2" Width="auto" />
                 </Grid.ColumnDefinitions>
 
-                <Grid Grid.Column="1" MouseEnter="panel2_MouseEnter" Background="LightBlue">
+                <Grid Grid.Column="1" MouseEnter="panel2_MouseEnter" MouseLeave="panel2_MouseLeave" Background="LightBlue">
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
                         <RowDefinition Height="auto" />
