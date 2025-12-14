@@ -1,78 +1,37 @@
-﻿<Window x:Class="Wpf_Ultimate.MainWindow"
+﻿<Window x:Class="Wpf_Ultimate.MainWindow2"
         xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Wpf_Ultimate"
         mc:Ignorable="d"
-        Title="MainWindow" Height="350" Width="525">
+        Title="MainWindow2" Height="450" Width="800">
     <DockPanel>
-
         <Menu DockPanel.Dock="Top" Background="LightSteelBlue" Padding="0,2">
             <MenuItem Header="FILE">
-                <MenuItem Header="Save">
-                    <MenuItem.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF7898B3" Offset="1" />
-                            <GradientStop Color="White" />
-                        </LinearGradientBrush>
-                    </MenuItem.Background>
-                </MenuItem>
-                <Separator />
-                <MenuItem Header="Exit" Click="MenuItem_Click">
-                    <MenuItem.Background>
-                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                            <GradientStop Color="#FF7898B3" Offset="1" />
-                            <GradientStop Color="White" />
-                        </LinearGradientBrush>
-                    </MenuItem.Background>
-                </MenuItem>
+                <MenuItem Header="Save"/>
+                <MenuItem Header="Exit"/>
             </MenuItem>
-            <MenuItem Header="EDIT" />
-            <MenuItem Header="HELP" />
         </Menu>
-
-
-        <Label DockPanel.Dock="Top" Content="Items" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center">
-            <Label.Background>
-                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                    <GradientStop Color="#FF7C7A7A"/>
-                    <GradientStop Color="White" Offset="1"/>
-                </LinearGradientBrush>
-            </Label.Background>
-        </Label>
-
-        <!--This StackPanel contains the slide in panel buttons on the right side-->
-        <StackPanel Name="buttonBar" Orientation="Horizontal" DockPanel.Dock="Right">
+        <Label Content="Item" DockPanel.Dock="Top" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" />
+                        
+        <StackPanel Name="buttomBar" DockPanel.Dock="Right" Orientation="Horizontal" Margin="1">
             <StackPanel.LayoutTransform>
                 <RotateTransform Angle="90" />
             </StackPanel.LayoutTransform>
 
-            <Button Name="btnOne" MouseEnter="btnOne_MouseEnter" Margin="0,0,5,0" Padding="10,1,10,1">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFFFE800" Offset="0" />
-                        <GradientStop Color="#FFFCFCFC" Offset="0.537" />
-                    </LinearGradientBrush>
-                </Button.Background> Button One
+            <Button Name="btnOne" MouseEnter="btnOne_MouseEnter" Margin="0,0,5,0" Padding="10,1,10,1" Content="Button One">
+                
             </Button>
 
-            <Button Name="btnTwo" MouseEnter="btnTwo_MouseEnter" Padding="10,1,10,1">
-                <Button.Background>
-                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
-                        <GradientStop Color="#FFFFE800" Offset="0" />
-                        <GradientStop Color="#FFFCFCFC" Offset="0.537" />
-                    </LinearGradientBrush>
-                </Button.Background> Button Two
+            <Button Name="btnTwo" MouseEnter="btnTwo_MouseEnter" Padding="10,1,10,1" Content="Button Two">
+                
             </Button>
         </StackPanel>
+        
+        <Grid Name="parentGrid" Background="Violet" Grid.IsSharedSizeScope="True" MouseDown="parentGrid_MouseDown">
 
-        <!--ParenrtGrid-->
-        <Grid Name="parentGrid" Grid.IsSharedSizeScope="True">
-            
-            <!--Main Grid-->
-            <Grid Name="layer0" MouseEnter="layer0_MouseEnter">
-
+            <!--<Grid Name="layer0" MouseEnter="layer0_MouseEnter">
                 <Grid.RowDefinitions>
                     <RowDefinition />
                     <RowDefinition />
@@ -103,9 +62,8 @@
                     <ListBoxItem>Understanding Theta</ListBoxItem>
                 </ListBox>
 
-            </Grid>
-            
-            <!--For panel1 Dock window-->
+            </Grid>-->
+
             <Grid Name="gridlayer1" Visibility="Collapsed">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -113,7 +71,7 @@
                 </Grid.ColumnDefinitions>
 
 
-                <Grid Grid.Column="1" MouseEnter="panel1_MouseEnter" Background="LightSteelBlue">
+                <Grid Grid.Column="1" MouseEnter="panel1_MouseEnter" Background="LightBlue">
 
                     <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
@@ -146,7 +104,6 @@
 
             </Grid>
 
-            <!--This grid is the panel that appears for Button Two-->
             <Grid Name="gridlayer2" Visibility="Collapsed">
                 <Grid.ColumnDefinitions>
                     <ColumnDefinition />
@@ -181,7 +138,9 @@
 
                 <GridSplitter Width="5" Grid.Column="1" HorizontalAlignment="Left" />
             </Grid>
-                                    
+
         </Grid>
+        
     </DockPanel>
+    
 </Window>

@@ -55,11 +55,17 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="ClippingScrollingScaling.xaml.cs">
+      <DependentUpon>ClippingScrollingScaling.xaml</DependentUpon>
+    </Compile>
     <Compile Include="DockPanelWindow.xaml.cs">
       <DependentUpon>DockPanelWindow.xaml</DependentUpon>
     </Compile>
     <Compile Include="GridPanelWindow.xaml.cs">
       <DependentUpon>GridPanelWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="GridPanelWindow1.xaml.cs">
+      <DependentUpon>GridPanelWindow1.xaml</DependentUpon>
     </Compile>
     <Compile Include="StackPanelWindow.xaml.cs">
       <DependentUpon>StackPanelWindow.xaml</DependentUpon>
@@ -71,11 +77,19 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
+    <Page Include="ClippingScrollingScaling.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="DockPanelWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="GridPanelWindow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="GridPanelWindow1.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

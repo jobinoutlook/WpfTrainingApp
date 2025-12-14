@@ -1,0 +1,41 @@
+﻿<Window x:Class="WpfTrainingApp3.ClippingScrollingScaling"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTrainingApp3"
+        mc:Ignorable="d"
+        Title="ClippingScrollingScaling" Height="450" Width="800">
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="206" />
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="155" />
+            <RowDefinition/>
+        </Grid.RowDefinitions>
+
+        <ScrollViewer>
+
+            <StackPanel Grid.Row="0" Grid.Column="0">
+                <Button Width="100" Background="Yellow" Height="30" Content="One"/>
+                <Button Width="100" Background="Orange" Height="30" Content="Two"/>
+                <Button Width="100" Background="Yellow" Height="30" Content="Three"/>
+                <Button Width="100" Background="Orange" Height="30" Content="Four"/>
+                <Button Width="100" Background="Yellow" Height="30" Content="Five"/>
+                <Button Width="100" Background="Orange" Height="30" Content="Six"/>
+            </StackPanel>
+        </ScrollViewer>
+        <Viewbox Grid.Row="0" Grid.Column="1">
+            <StackPanel >
+            <Button Width="100" Background="Yellow" Height="30" Content="One"/>
+            <Button Width="100" Background="Orange" Height="30" Content="Two"/>
+            <Button Width="100" Background="Yellow" Height="30" Content="Three"/>
+            <Button Width="100" Background="Orange" Height="30" Content="Four"/>
+            <Button Width="100" Background="Yellow" Height="30" Content="Five"/>
+            <Button Width="100" Background="Orange" Height="30" Content="Six"/>
+            </StackPanel>
+        </Viewbox>
+    </Grid>
+</Window>

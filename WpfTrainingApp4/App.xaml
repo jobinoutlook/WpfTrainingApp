@@ -1,8 +1,8 @@
-﻿<Application x:Class="WpfTrainingApp3.App"
+﻿<Application x:Class="WpfTrainingApp4.App"
              xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
              xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
-             xmlns:local="clr-namespace:WpfTrainingApp3"
-             StartupUri="ClippingScrollingScaling.xaml">
+             xmlns:local="clr-namespace:WpfTrainingApp4"
+             StartupUri="LearningFrame.xaml">
     <Application.Resources>
          
     </Application.Resources>

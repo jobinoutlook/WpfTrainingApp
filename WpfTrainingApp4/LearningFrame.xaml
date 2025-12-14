@@ -1,0 +1,17 @@
+﻿<Window x:Class="WpfTrainingApp4.LearningFrame"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:WpfTrainingApp4"
+        mc:Ignorable="d"
+        Title="LearningFrame" Height="450" Width="800">
+    <Grid Background="LightBlue">
+        <StackPanel HorizontalAlignment="Left" Width="140">
+            <Button x:Name="btnMsft" Content="Microsoft" Width="100" Height="40" Margin="10" Click="btnMsft_Click"/>
+            <Button x:Name="btnIntel" Content="Intel" Width="100" Height="40" Margin="10" Click="btnIntel_Click"/>
+        </StackPanel>
+        <Frame x:Name="frame" Margin="125,0,5,5" Visibility="Hidden" Source="https://www.amazon.in/"/>
+        <Frame x:Name="frame1" Margin="125,0,5,5" Visibility="Hidden" Source="https://asianetbroadband.in/"/>
+    </Grid>
+</Window>
