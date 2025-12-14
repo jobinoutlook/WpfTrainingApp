@@ -7,31 +7,65 @@
         mc:Ignorable="d"
         Title="MainWindow2" Height="450" Width="800">
     <DockPanel>
-        <Menu DockPanel.Dock="Top" Background="LightSteelBlue" Padding="0,2">
+        <Menu DockPanel.Dock="Top" Padding="0,2">
+            <Menu.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="Black" Offset="0.002"/>
+                    <GradientStop Color="#FF62CFDE" Offset="0.744"/>
+                </LinearGradientBrush>
+            </Menu.Background>
             <MenuItem Header="FILE">
-                <MenuItem Header="Save"/>
-                <MenuItem Header="Exit"/>
+                <MenuItem Header="Save">
+                    <MenuItem.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="#FF76F1DE" Offset="0.396"/>
+                        </LinearGradientBrush>
+                    </MenuItem.Background>
+                </MenuItem>
+                <MenuItem Header="Exit">
+                    <MenuItem.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="Black"/>
+                            <GradientStop Color="#FF76F1DE" Offset="0.396"/>
+                        </LinearGradientBrush>
+                    </MenuItem.Background>
+                </MenuItem>
             </MenuItem>
         </Menu>
-        <Label Content="Item" DockPanel.Dock="Top" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" />
-                        
+        <Label Content="Item" DockPanel.Dock="Top" HorizontalAlignment="Stretch" HorizontalContentAlignment="Center" Background="#FFEBEBC5" >
+
+        </Label>
+
         <StackPanel Name="buttomBar" DockPanel.Dock="Right" Orientation="Horizontal" Margin="1">
             <StackPanel.LayoutTransform>
                 <RotateTransform Angle="90" />
             </StackPanel.LayoutTransform>
 
             <Button Name="btnOne" MouseEnter="btnOne_MouseEnter" Margin="0,0,5,0" Padding="10,1,10,1" Content="Button One">
-                
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black" Offset="0.007"/>
+                        <GradientStop Color="#FFF1F784" Offset="0.429"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+
             </Button>
 
             <Button Name="btnTwo" MouseEnter="btnTwo_MouseEnter" Padding="10,1,10,1" Content="Button Two">
-                
+                <Button.Background>
+                    <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                        <GradientStop Color="Black"/>
+                        <GradientStop Color="#FFEADF7E" Offset="0.429"/>
+                    </LinearGradientBrush>
+                </Button.Background>
+
             </Button>
         </StackPanel>
-        
+
         <Grid Name="parentGrid" Background="Violet" Grid.IsSharedSizeScope="True" MouseDown="parentGrid_MouseDown" MouseEnter="parentGrid_MouseEnter" MouseLeave="parentGrid_MouseLeave">
 
-            <Grid Name="layer0" MouseEnter="layer0_MouseEnter" Background="LightBlue">
+            <Grid Name="layer0" MouseEnter="layer0_MouseEnter" Background="White">
 
                 <Grid.RowDefinitions>
                     <RowDefinition />
@@ -74,7 +108,7 @@
 
                 <Grid Grid.Column="1" MouseEnter="panel1_MouseEnter" MouseLeave="panel1_MouseLeave" Background="LightBlue">
 
-                    <Grid.RowDefinitions> 
+                    <Grid.RowDefinitions>
                         <RowDefinition Height="auto" />
                         <RowDefinition />
                     </Grid.RowDefinitions>
@@ -141,7 +175,7 @@
             </Grid>
 
         </Grid>
-        
+
     </DockPanel>
-    
+
 </Window>
