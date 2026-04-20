@@ -3,6 +3,7 @@ using System;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Infrastructure;
 using Microsoft.EntityFrameworkCore.Metadata;
+using Microsoft.EntityFrameworkCore.Migrations;
 using Microsoft.EntityFrameworkCore.Storage.ValueConversion;
 using WpfCoreApp.EF;
 
@@ -11,9 +12,11 @@ using WpfCoreApp.EF;
 namespace WpfCoreApp.Migrations
 {
     [DbContext(typeof(AppDbContext))]
-    partial class AppDbContextModelSnapshot : ModelSnapshot
+    [Migration("20260419112841_Employees-DGDVM")]
+    partial class EmployeesDGDVM
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        /// <inheritdoc />
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -21,57 +24,6 @@ namespace WpfCoreApp.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128);
 
             SqlServerModelBuilderExtensions.UseIdentityColumns(modelBuilder);
-
-            modelBuilder.Entity("WpfCoreApp.Mvvm.Model.Citizen", b =>
-                {
-                    b.Property<int>("Id")
-                        .ValueGeneratedOnAdd()
-                        .HasColumnType("int");
-
-                    SqlServerPropertyBuilderExtensions.UseIdentityColumn(b.Property<int>("Id"));
-
-                    b.Property<DateTime>("DateOfBirth")
-                        .HasColumnType("datetime2");
-
-                    b.Property<string>("FirstName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<string>("LastName")
-                        .HasColumnType("nvarchar(max)");
-
-                    b.Property<byte[]>("Photo")
-                        .HasColumnType("varbinary(max)");
-
-                    b.HasKey("Id");
-
-                    b.ToTable("Citizens");
-
-                    b.HasData(
-                        new
-                        {
-                            Id = 1,
-                            DateOfBirth = new DateTime(1990, 5, 12, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FirstName = "John",
-                            LastName = "Doe",
-                            Photo = new byte[0]
-                        },
-                        new
-                        {
-                            Id = 2,
-                            DateOfBirth = new DateTime(1985, 11, 23, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FirstName = "Jane",
-                            LastName = "Smith",
-                            Photo = new byte[0]
-                        },
-                        new
-                        {
-                            Id = 3,
-                            DateOfBirth = new DateTime(2000, 1, 5, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            FirstName = "Michael",
-                            LastName = "Brown",
-                            Photo = new byte[0]
-                        });
-                });
 
             modelBuilder.Entity("WpfCoreApp.Mvvm.Model.Contact", b =>
                 {

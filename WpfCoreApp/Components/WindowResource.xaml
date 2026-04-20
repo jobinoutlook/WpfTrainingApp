@@ -14,5 +14,19 @@
         </Setter>
     </Style>
 
-
+    <DrawingImage x:Key="PlaceholderImage">
+        <DrawingImage.Drawing>
+            <GeometryDrawing Brush="Gray">
+                <GeometryDrawing.Geometry>
+                    <GeometryGroup>
+                        <!-- Head -->
+                        <EllipseGeometry Center="0,0" RadiusX="20" RadiusY="20"/>
+                        <!-- Body -->
+                        <EllipseGeometry Center="0,40" RadiusX="35" RadiusY="20"/>
+                    </GeometryGroup>
+                </GeometryDrawing.Geometry>
+            </GeometryDrawing>
+        </DrawingImage.Drawing>
+    </DrawingImage>
+    
 </ResourceDictionary>

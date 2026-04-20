@@ -126,6 +126,7 @@ namespace WpfCoreApp
             LoginWindow loginWindow = new LoginWindow();
             loginWindow.Owner = this;
             loginWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            
             loginWindow.ShowDialog();
         }
 
@@ -137,6 +138,26 @@ namespace WpfCoreApp
             contactsWindow.ShowInTaskbar = false;
             contactsWindow.ResizeMode = ResizeMode.NoResize;
             contactsWindow.Show();
+        }
+
+        private void Employees_Click(object sender, RoutedEventArgs e)
+        {
+            DataGridDemo demoWindow = new DataGridDemo();
+            demoWindow.Owner = this;
+            demoWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            demoWindow.ShowInTaskbar = false;
+            demoWindow.ResizeMode = ResizeMode.NoResize;
+            demoWindow.Show();
+        }
+
+        private void Citizens_Click(object sender, RoutedEventArgs e)
+        {
+            ListViewDemo demoWindow = new ListViewDemo();
+            demoWindow.Owner = this;
+            demoWindow.WindowStartupLocation = WindowStartupLocation.CenterOwner;
+            demoWindow.ShowInTaskbar = false;
+            demoWindow.ResizeMode = ResizeMode.NoResize;
+            demoWindow.Show();
         }
     }
 }

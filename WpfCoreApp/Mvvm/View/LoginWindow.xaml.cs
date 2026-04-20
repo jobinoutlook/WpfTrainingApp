@@ -34,7 +34,7 @@ namespace WpfCoreApp.Mvvm.View
 
 
             Loaded += Window_Loaded;
-
+            
 
         }
 
@@ -54,7 +54,8 @@ namespace WpfCoreApp.Mvvm.View
             SetWindowLong(hwnd, GWL_STYLE, style & ~WS_SYSMENU);
 
 
-           
+            txtUsername.Text = "jobin";
+            txtPassword.Text = "admin123";
 
         }
 

@@ -28,7 +28,6 @@ namespace WpfCoreApp.Mvvm.ViewModel
         private void OnPropertyChanged(string propertyName)
         {
           PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
-
         }
 
         public Contact SelectedContact { get; set; }
