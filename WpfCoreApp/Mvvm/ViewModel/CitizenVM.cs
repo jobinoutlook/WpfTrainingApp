@@ -93,6 +93,7 @@ namespace WpfCoreApp.Mvvm.ViewModel
             {
                 DataContext = new EditCitizenVM(citizen) // pass citizen to VM
             };
+            editWindow.ResizeMode = ResizeMode.NoResize;
             editWindow.ShowDialog();
         }
 
@@ -102,6 +103,7 @@ namespace WpfCoreApp.Mvvm.ViewModel
             {
                 DataContext = new AddCitizenVM()
             };
+            addWindow.ResizeMode = ResizeMode.NoResize;
             addWindow.ShowDialog();
 
             // After closing, refresh list if new citizen was added
