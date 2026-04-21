@@ -23,7 +23,7 @@
 
         <!-- DataGrid in first row -->
         <!--<DataGrid Grid.Row="0" AutoGenerateColumns="True" />-->
-        <DataGrid x:Name="dgEmployees" Grid.Row="0" ItemsSource="{Binding Employees}" AutoGenerateColumns="False"  Margin="0,-1,0,5" 
+        <DataGrid x:Name="dgEmployees" Grid.Row="0" ItemsSource="{Binding Employees}" AutoGenerateColumns="False"  Margin="0,0,0,5" 
                   SelectionMode="Single" SelectionChanged="dgEmployees_SelectionChanged" RowEditEnding="dgEmployees_RowEditEnding">
             <DataGrid.Columns>
                 <DataGridTextColumn Header="Name" Binding="{Binding Name}" MinWidth="100" Width="auto">
@@ -68,13 +68,15 @@
         </DataGrid>
 
         <!-- Save button in second row -->
+        <StackPanel Grid.Row="1" Orientation="Horizontal" HorizontalAlignment="Center">
+        <Button x:Name="btnSave"  Content="Save" MinWidth="60" IsEnabled="{Binding HasChanges}"
+                HorizontalAlignment="Center" Margin="10,10,10,10" Width="60" Click="btnSave_Click"/>
+        
+        <Button x:Name="btnDelete" Content="Delete" MinWidth="60" HorizontalAlignment="Center" IsEnabled="False"
+                Margin="10,10,10,10" VerticalAlignment="Center" Click="btnDelete_Click"/>
 
-        <Button x:Name="btnSave" Grid.Row="1" Content="Save" MinWidth="60" IsEnabled="{Binding HasChanges}"
-                HorizontalAlignment="Left" Margin="260,10,0,10" Width="60" Click="btnSave_Click"/>
-        <Button x:Name="btnCancel" Grid.Row="1" Content="Close" MinWidth="60" HorizontalAlignment="Left" 
-                Margin="410,10,0,10" Click="btnCancel_Click"   />
-        <Button x:Name="btnDelete" Content="Delete" MinWidth="60" HorizontalAlignment="Left" IsEnabled="False"
-                Margin="335,0,0,0" Grid.Row="1" VerticalAlignment="Center" Click="btnDelete_Click"/>
-
+        <Button x:Name="btnCancel" Content="Close" MinWidth="60" HorizontalAlignment="Center" 
+                Margin="10,10,10,10" Click="btnCancel_Click"   />
+        </StackPanel>
     </Grid>
 </Window>

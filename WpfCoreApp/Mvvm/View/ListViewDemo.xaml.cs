@@ -20,11 +20,11 @@ namespace WpfCoreApp.Mvvm.View
     /// </summary>
     public partial class ListViewDemo : Window
     {
-        private CitizenVM _viewModel;
+        //private CitizenVM _viewModel;
         public ListViewDemo()
         {
             InitializeComponent();
-            _viewModel = new CitizenVM();
+           // _viewModel = new CitizenVM();
             //this.DataContext = _viewModel;
         }
 

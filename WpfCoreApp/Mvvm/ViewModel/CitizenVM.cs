@@ -8,6 +8,7 @@ using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 using WpfCoreApp.EF;
 using WpfCoreApp.Mvvm.Model;
@@ -43,6 +44,8 @@ namespace WpfCoreApp.Mvvm.ViewModel
 
         public ICommand AddCitizenCommand { get; }
 
+        public ICommand DeleteCitizenCommand { get; }
+
         public ObservableCollection<Citizen>? Citizens { get; set; }
 
 
@@ -59,6 +62,8 @@ namespace WpfCoreApp.Mvvm.ViewModel
             EditCitizenCommand = new RelayCommand<Citizen>(EditCitizen);
 
             AddCitizenCommand = new RelayCommand(AddCitizen);
+
+            DeleteCitizenCommand = new RelayCommand<object>(DeleteCitizen);
 
         }
 
@@ -105,6 +110,34 @@ namespace WpfCoreApp.Mvvm.ViewModel
                 Citizens?.Clear();
                 foreach (var c in context.Citizens.ToList())
                     Citizens?.Add(c);
+            }
+        }
+
+        private void DeleteCitizen(object parameter)
+        {
+            var tuple = parameter as Tuple<Citizen, Window>;
+            if (tuple == null) return;
+
+            var citizen = tuple.Item1;
+            var window = tuple.Item2;
+
+            //var result = MessageBox.Show($"Are you sure you want to delete {citizen.FirstName} {citizen.LastName}?",
+            //                             "Confirm Delete",
+            //                             MessageBoxButton.YesNo,
+            //                             MessageBoxImage.Warning);
+
+            var result = CenteredMessageBox.Show(window, $"Are you sure you want to delete {citizen.FirstName} {citizen.LastName}?",
+                                         "Confirm Delete", MessageBoxButton.YesNo, MessageBoxImage.Warning);
+
+            if (result == MessageBoxResult.Yes)
+            {
+                using (var context = new AppDbContext())
+                {
+                    context.Citizens.Remove(citizen);
+                    context.SaveChanges();
+                }
+
+                Citizens?.Remove(citizen); // remove from ObservableCollection
             }
         }
     }
