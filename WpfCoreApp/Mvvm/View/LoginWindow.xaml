@@ -26,12 +26,12 @@
 
         <Label Content="Username" Margin="39,143,0,0" Height="24" VerticalAlignment="Top" HorizontalAlignment="Left" Width="65" />
 
-        <TextBox x:Name="txtUsername" Text="{Binding UserName,UpdateSourceTrigger=PropertyChanged}" Margin="109,147,0,0" TextWrapping="Wrap" Height="19" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
+        <TextBox x:Name="txtUsername" Text="{Binding UserName,UpdateSourceTrigger=PropertyChanged}" Margin="109,144,0,0" TextWrapping="Wrap" Height="25" VerticalAlignment="Top" HorizontalAlignment="Left" Width="120"/>
 
         <Label Content="Password" HorizontalAlignment="Left" Margin="39,172,0,0" VerticalAlignment="Top"/>
 
 
-        <TextBox x:Name="txtPassword" Text="{Binding Password,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding UserName, Converter={StaticResource stringToBool}}" HorizontalAlignment="Left" Margin="109,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="txtPassword" Text="{Binding Password,UpdateSourceTrigger=PropertyChanged}" IsEnabled="{Binding UserName, Converter={StaticResource stringToBool}}" HorizontalAlignment="Left" Margin="109,176,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Height="25" Width="120"/>
 
 
         <Button x:Name="btnLogin"  Command="{Binding LoginCommand}" CommandParameter="{Binding Password}"

@@ -16,9 +16,9 @@
         <img:CitizenWindowTupleConverter x:Key="CitizenWindowTupleConverter"/>
         <!-- Converter to turn byte[] into ImageSource -->
         <img:ByteArrayToImageConverter x:Key="ImageConverter"/>
-        
+
     </Window.Resources>
-    
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="*" />
@@ -44,7 +44,7 @@
                     </GridViewColumn>
                     <!--<GridViewColumn Header="First Name" DisplayMemberBinding="{Binding FirstName}" />-->
                     <GridViewColumn Header="First Name" DisplayMemberBinding="{Binding FirstName}"  Width="auto"/>
-                   
+
 
                     <GridViewColumn Header="Last Name" DisplayMemberBinding="{Binding LastName}" Width="auto" />
 
@@ -60,8 +60,8 @@
 
                     <GridViewColumn Header="Date of Birth"
                                     DisplayMemberBinding="{Binding DateOfBirth, StringFormat=d}" />
-                    
-                   
+
+
                     <!-- Button column -->
                     <GridViewColumn Header="Actions" Width="300">
                         <GridViewColumn.CellTemplate>
@@ -75,7 +75,7 @@
                                         Command="{Binding DataContext.EditCitizenCommand, 
                                         RelativeSource={RelativeSource AncestorType=ListView}}"
                                         CommandParameter="{Binding}" />
-                                    <Button Content="Delete" MinWidth="50" 
+                                    <Button Content="Delete" MinWidth="50" MinHeight="30" 
                                         Command="{Binding DataContext.DeleteCitizenCommand, 
                                         RelativeSource={RelativeSource AncestorType=ListView}}">
                                         <!--CommandParameter="{Binding}">-->
@@ -87,17 +87,46 @@
                                                 <!-- Window -->
                                             </MultiBinding>
                                         </Button.CommandParameter>
+                                        <!-- Inline Style Override -->
+                                        <Button.Style>
+                                            <Style TargetType="Button" >
+                                                <!-- Override Background -->
+                                                <Setter Property="Background" Value="{StaticResource OrangeRedBrush}" />
+                                                <Setter Property="Foreground" Value="White" />
+                                                <Setter Property="FontWeight" Value="Bold" />
 
+                                                <Setter Property="Template">
+                                                    <Setter.Value>
+                                                        <ControlTemplate TargetType="Button">
+                                                            <Border Background="{TemplateBinding Background}"
+                                                                                                CornerRadius="4">
+                                                                <ContentPresenter HorizontalAlignment="Center"
+                                                                            VerticalAlignment="Center"/>
+                                                            </Border>
+                                                            <ControlTemplate.Triggers>
+                                                                <!-- Hover Override -->
+                                                                <Trigger Property="IsMouseOver" Value="True">
+                                                                    <Setter Property="Background" Value="DarkRed"/>
+                                                                </Trigger>
+                                                                <!-- Pressed Override -->
+                                                                <Trigger Property="IsPressed" Value="True">
+                                                                    <Setter Property="Background" Value="Firebrick"/>
+                                                                </Trigger>
+                                                            </ControlTemplate.Triggers>
+                                                        </ControlTemplate>
+                                                    </Setter.Value>
+                                                </Setter>
+                                            </Style>
+                                        </Button.Style>
                                     </Button>
                                 </StackPanel>
                             </DataTemplate>
                         </GridViewColumn.CellTemplate>
                     </GridViewColumn>
-                    
+
                 </GridView>
             </ListView.View>
         </ListView>
-        <Button x:Name="btnAddCitizen" Content="Add Citizen" MinWidth="60" HorizontalAlignment="Center"
-         Margin="0,10,0,10" Grid.Row="1" VerticalAlignment="Center" Command="{Binding AddCitizenCommand}" />
+        <Button x:Name="btnAddCitizen" Content="Add Citizen" MinWidth="60" HorizontalAlignment="Center" Grid.Row="1" VerticalAlignment="Center" Command="{Binding AddCitizenCommand}" Height="30" Width="80" />
     </Grid>
 </Window>
