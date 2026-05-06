@@ -77,7 +77,7 @@
                                         CommandParameter="{Binding}" />
                                     <Button Content="Delete" MinWidth="50" MinHeight="30" 
                                         Command="{Binding DataContext.DeleteCitizenCommand, 
-                                        RelativeSource={RelativeSource AncestorType=ListView}}">
+                                        RelativeSource={RelativeSource AncestorType=ListView}}" Style="{StaticResource CustomDeleteButton}">
                                         <!--CommandParameter="{Binding}">-->
                                         <Button.CommandParameter>
                                             <MultiBinding Converter="{StaticResource CitizenWindowTupleConverter}">
@@ -88,9 +88,9 @@
                                             </MultiBinding>
                                         </Button.CommandParameter>
                                         <!-- Inline Style Override -->
-                                        <Button.Style>
+                                        <!--<Button.Style>
                                             <Style TargetType="Button" >
-                                                <!-- Override Background -->
+                                                --><!-- Override Background --><!--
                                                 <Setter Property="Background" Value="{StaticResource OrangeRedBrush}" />
                                                 <Setter Property="Foreground" Value="White" />
                                                 <Setter Property="FontWeight" Value="Bold" />
@@ -104,11 +104,11 @@
                                                                             VerticalAlignment="Center"/>
                                                             </Border>
                                                             <ControlTemplate.Triggers>
-                                                                <!-- Hover Override -->
+                                                                --><!-- Hover Override --><!--
                                                                 <Trigger Property="IsMouseOver" Value="True">
                                                                     <Setter Property="Background" Value="DarkRed"/>
                                                                 </Trigger>
-                                                                <!-- Pressed Override -->
+                                                                --><!-- Pressed Override --><!--
                                                                 <Trigger Property="IsPressed" Value="True">
                                                                     <Setter Property="Background" Value="Firebrick"/>
                                                                 </Trigger>
@@ -117,7 +117,7 @@
                                                     </Setter.Value>
                                                 </Setter>
                                             </Style>
-                                        </Button.Style>
+                                        </Button.Style>-->
                                     </Button>
                                 </StackPanel>
                             </DataTemplate>

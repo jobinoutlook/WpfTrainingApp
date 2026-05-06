@@ -27,6 +27,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTrainingApp3", "WpfTrain
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WpfTrainingApp4", "WpfTrainingApp4\WpfTrainingApp4.csproj", "{2EB92B10-2C1A-4384-A808-F8A3D3A61128}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CustomDependencyProperty", "CustomDependencyProperty\CustomDependencyProperty.csproj", "{2F58A6A3-CABB-415C-8A62-2886996B3370}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -81,6 +83,10 @@ Global
 		{2EB92B10-2C1A-4384-A808-F8A3D3A61128}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2EB92B10-2C1A-4384-A808-F8A3D3A61128}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{2EB92B10-2C1A-4384-A808-F8A3D3A61128}.Release|Any CPU.Build.0 = Release|Any CPU
+		{2F58A6A3-CABB-415C-8A62-2886996B3370}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{2F58A6A3-CABB-415C-8A62-2886996B3370}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{2F58A6A3-CABB-415C-8A62-2886996B3370}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{2F58A6A3-CABB-415C-8A62-2886996B3370}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

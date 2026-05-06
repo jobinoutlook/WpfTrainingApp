@@ -138,7 +138,56 @@
             </Setter>
         </Style>
 
+
   
+        <!-- Custom DeleteToAdd Button Style -->
+        <Style x:Key="CustomDeleteButton" TargetType="Button">
+            <Setter Property="Background" Value="#FF6347"/>
+            <!-- Tomato Red -->
+            <Setter Property="Foreground" Value="White"/>
+            <Setter Property="FontWeight" Value="Bold"/>
+            <Setter Property="Padding" Value="8,4"/>
+            <Setter Property="BorderBrush" Value="#B22222"/>
+            <!-- Firebrick -->
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="Button">
+                        <Border Background="{TemplateBinding Background}"
+                            BorderBrush="{TemplateBinding BorderBrush}"
+                            BorderThickness="{TemplateBinding BorderThickness}"
+                            CornerRadius="4">
+                            <ContentPresenter HorizontalAlignment="Center"
+                                          VerticalAlignment="Center"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <!-- Hover -->
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Background" Value="#DC143C"/>
+                                <!-- Crimson -->
+                                <Setter Property="BorderBrush" Value="#8B0000"/>
+                                <!-- DarkRed -->
+                            </Trigger>
+                            <!-- Pressed -->
+                            <Trigger Property="IsPressed" Value="True">
+                                <Setter Property="Background" Value="#B22222"/>
+                                <!-- Firebrick -->
+                                <Setter Property="BorderBrush" Value="#800000"/>
+                                <!-- Maroon -->
+                            </Trigger>
+                            <!-- Disabled -->
+                            <Trigger Property="IsEnabled" Value="False">
+                                <Setter Property="Background" Value="#FFC0CB"/>
+                                <!-- Light Pink -->
+                                <Setter Property="Foreground" Value="Gray"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+
+ 
 
 
 
