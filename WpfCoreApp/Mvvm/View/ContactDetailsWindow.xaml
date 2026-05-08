@@ -6,7 +6,9 @@
         xmlns:local="clr-namespace:WpfCoreApp.Mvvm.View"
         xmlns:vm="clr-namespace:WpfCoreApp.Mvvm.ViewModel"
         mc:Ignorable="d"
-        Title="Contact Details" Height="300" Width="300">
+        Title="Contact Details" Height="300" Width="300"
+        Style="{StaticResource {x:Type Window}}"
+        >
     <!--<Window.Resources>
         <vm:ContactsVM x:Key="vm"/>
     </Window.Resources>-->

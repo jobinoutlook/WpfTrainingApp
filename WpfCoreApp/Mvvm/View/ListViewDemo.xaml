@@ -7,7 +7,9 @@
         mc:Ignorable="d"
         Title="ListViewDemo" Height="650" Width="730"
         xmlns:vm="clr-namespace:WpfCoreApp.Mvvm.ViewModel"
-        xmlns:img="clr-namespace:WpfCoreApp.AppHelper">
+        xmlns:img="clr-namespace:WpfCoreApp.AppHelper"
+        
+        >
     <Window.DataContext>
         <vm:CitizenVM/>
     </Window.DataContext>

@@ -10,7 +10,9 @@
         ResizeMode="NoResize"
         ShowInTaskbar="False"
         ContentRendered="Window_ContentRendered"
-        Title="Login" Height="380" Width="300">
+        Title="Login" Height="380" Width="300"
+        Style="{StaticResource {x:Type Window}}"
+        >
     <Window.Resources>
         <!--<vmlogin:LoginVM x:Key="vmlogin"/>-->
         <converters:StringToBool x:Key="stringToBool"/>

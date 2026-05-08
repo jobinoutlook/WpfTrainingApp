@@ -11,7 +11,9 @@
         ResizeMode="CanResize"
         ContentRendered="Window_ContentRendered"
         Closing="Window_Closing"
-        Title="MainWindow" Height="450" Width="800">
+        Title="MainWindow" Height="450" Width="800"
+        Style="{StaticResource {x:Type Window}}"
+        >
 
     <WindowChrome.WindowChrome>
         <WindowChrome CaptionHeight="30" CornerRadius="10" GlassFrameThickness="0" ResizeBorderThickness="5"
